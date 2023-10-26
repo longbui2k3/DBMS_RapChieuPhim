@@ -71,11 +71,11 @@
     <Compile Include="Forms\FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormQuanLy.cs">
+    <Compile Include="Forms\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormQuanLy.Designer.cs">
-      <DependentUpon>FormQuanLy.cs</DependentUpon>
+    <Compile Include="Forms\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiNhanh.cs" />
     <Compile Include="Models\ChiTietDoAn.cs" />
@@ -118,8 +118,8 @@
     <EmbeddedResource Include="Forms\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormQuanLy.resx">
-      <DependentUpon>FormQuanLy.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
