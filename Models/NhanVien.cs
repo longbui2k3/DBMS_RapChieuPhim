@@ -40,6 +40,21 @@ namespace QuanLyRapChieuPhim.Models
             MaChiNhanh = maChiNhanh;
             MaChiNhanhQuanLy = maChiNhanhQuanLy;
         }
+
+        public String getMaNhanVien { get { return MaNhanVien; } }
+        public String getHoVaTen { get { return HoVaTen; } }
+        public DateTime getNgaySinh { get { return NgaySinh; } }
+        public String getEmail { get { return Email; } }
+        public String getSoDienThoai { get { return SoDienThoai; } }
+        public String getGioiTinh { get { return GioiTinh; } }
+        public String getDiaChi { get { return DiaChi; } }
+        public int getLuong { get { return Luong; } }
+        public String getCaLamViec { get { return CaLamViec; } }
+        public String getViTri { get { return ViTri; } }
+
+        public String getTenNguoiDung { get { return TenNguoiDung; } }
+        public String getMaChiNhanh { get { return MaChiNhanh; } }
+        public String getMaChiNhanhQuanLy { get { return MaChiNhanhQuanLy; } }
     }
 
 }
