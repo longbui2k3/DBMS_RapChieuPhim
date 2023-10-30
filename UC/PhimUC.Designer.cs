@@ -41,7 +41,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_Maphim = new System.Windows.Forms.TextBox();
             this.txt_Tenphim = new System.Windows.Forms.TextBox();
             this.txt_Daodien = new System.Windows.Forms.TextBox();
             this.txt_Thoiluong = new System.Windows.Forms.TextBox();
@@ -49,7 +48,6 @@
             this.txt_Dotuoi = new System.Windows.Forms.TextBox();
             this.txt_Quocgia = new System.Windows.Forms.TextBox();
             this.txt_Nhasanxuat = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtTomtat = new System.Windows.Forms.RichTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -59,11 +57,15 @@
             this.btn_Xem = new System.Windows.Forms.Button();
             this.btn = new System.Windows.Forms.Button();
             this.picFilm = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvPhim = new System.Windows.Forms.DataGridView();
+            this.btn_chonimg = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_Maphim = new System.Windows.Forms.TextBox();
+            this.txtp = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtm_Ngaykhoichieu = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -71,38 +73,28 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Phim";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TabIndex = 64;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 34);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mã phim";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 63;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 65);
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tên phim";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 62;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(883, 141);
+            this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.TabIndex = 61;
             // 
             // label4
             // 
@@ -176,14 +168,6 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "Độ tuổi";
             // 
-            // txt_Maphim
-            // 
-            this.txt_Maphim.Location = new System.Drawing.Point(144, 27);
-            this.txt_Maphim.Name = "txt_Maphim";
-            this.txt_Maphim.Size = new System.Drawing.Size(158, 22);
-            this.txt_Maphim.TabIndex = 12;
-            this.txt_Maphim.TextChanged += new System.EventHandler(this.txt_Maphim_TextChanged);
-            // 
             // txt_Tenphim
             // 
             this.txt_Tenphim.Location = new System.Drawing.Point(144, 62);
@@ -233,13 +217,6 @@
             this.txt_Nhasanxuat.Size = new System.Drawing.Size(161, 22);
             this.txt_Nhasanxuat.TabIndex = 19;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(151, 170);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 20;
-            // 
             // txtTomtat
             // 
             this.txtTomtat.Location = new System.Drawing.Point(665, 50);
@@ -247,6 +224,7 @@
             this.txtTomtat.Size = new System.Drawing.Size(242, 171);
             this.txtTomtat.TabIndex = 22;
             this.txtTomtat.Text = "";
+            this.txtTomtat.TextChanged += new System.EventHandler(this.txtTomtat_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -268,6 +246,7 @@
             this.btn_Them.TabIndex = 24;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn_Xoa
             // 
@@ -295,16 +274,14 @@
             this.btn_Xem.TabIndex = 27;
             this.btn_Xem.Text = "Xem";
             this.btn_Xem.UseVisualStyleBackColor = true;
+            this.btn_Xem.Click += new System.EventHandler(this.btn_Xem_Click);
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(956, 188);
+            this.btn.Location = new System.Drawing.Point(0, 0);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(108, 33);
-            this.btn.TabIndex = 28;
-            this.btn.Text = "Xem";
-            this.btn.UseVisualStyleBackColor = true;
-            this.btn.Click += new System.EventHandler(this.button1_Click);
+            this.btn.Size = new System.Drawing.Size(75, 23);
+            this.btn.TabIndex = 59;
             // 
             // picFilm
             // 
@@ -317,32 +294,79 @@
             this.picFilm.TabIndex = 56;
             this.picFilm.TabStop = false;
             // 
-            // dataGridView1
+            // dgvPhim
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 254);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 258);
-            this.dataGridView1.TabIndex = 57;
+            this.dgvPhim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhim.Location = new System.Drawing.Point(18, 254);
+            this.dgvPhim.Name = "dgvPhim";
+            this.dgvPhim.RowHeadersWidth = 51;
+            this.dgvPhim.RowTemplate.Height = 24;
+            this.dgvPhim.Size = new System.Drawing.Size(1084, 337);
+            this.dgvPhim.TabIndex = 57;
+            this.dgvPhim.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhim_CellContentClick);
             // 
-            // dataGridView2
+            // btn_chonimg
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(196, 464);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(8, 8);
-            this.dataGridView2.TabIndex = 58;
+            this.btn_chonimg.Location = new System.Drawing.Point(978, 177);
+            this.btn_chonimg.Name = "btn_chonimg";
+            this.btn_chonimg.Size = new System.Drawing.Size(75, 44);
+            this.btn_chonimg.TabIndex = 65;
+            this.btn_chonimg.Text = "Chọn ảnh";
+            this.btn_chonimg.UseVisualStyleBackColor = true;
+            this.btn_chonimg.Click += new System.EventHandler(this.btn_chonimg_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(0, 0);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 1;
+            // 
+            // txt_Maphim
+            // 
+            this.txt_Maphim.Location = new System.Drawing.Point(144, 24);
+            this.txt_Maphim.Name = "txt_Maphim";
+            this.txt_Maphim.Size = new System.Drawing.Size(158, 22);
+            this.txt_Maphim.TabIndex = 66;
+            // 
+            // txtp
+            // 
+            this.txtp.AutoSize = true;
+            this.txtp.Location = new System.Drawing.Point(42, 65);
+            this.txtp.Name = "txtp";
+            this.txtp.Size = new System.Drawing.Size(63, 16);
+            this.txtp.TabIndex = 67;
+            this.txtp.Text = "Tên phim";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(42, 27);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 16);
+            this.label12.TabIndex = 68;
+            this.label12.Text = "Mã phim";
+            // 
+            // dtm_Ngaykhoichieu
+            // 
+            this.dtm_Ngaykhoichieu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_Ngaykhoichieu.Location = new System.Drawing.Point(144, 167);
+            this.dtm_Ngaykhoichieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtm_Ngaykhoichieu.Name = "dtm_Ngaykhoichieu";
+            this.dtm_Ngaykhoichieu.Size = new System.Drawing.Size(201, 22);
+            this.dtm_Ngaykhoichieu.TabIndex = 69;
             // 
             // PhimUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtm_Ngaykhoichieu);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtp);
+            this.Controls.Add(this.txt_Maphim);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btn_chonimg);
+            this.Controls.Add(this.dgvPhim);
             this.Controls.Add(this.picFilm);
             this.Controls.Add(this.btn);
             this.Controls.Add(this.btn_Xem);
@@ -350,7 +374,6 @@
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.txtTomtat);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txt_Nhasanxuat);
             this.Controls.Add(this.txt_Quocgia);
             this.Controls.Add(this.txt_Dotuoi);
@@ -358,7 +381,6 @@
             this.Controls.Add(this.txt_Thoiluong);
             this.Controls.Add(this.txt_Daodien);
             this.Controls.Add(this.txt_Tenphim);
-            this.Controls.Add(this.txt_Maphim);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -374,8 +396,7 @@
             this.Name = "PhimUC";
             this.Size = new System.Drawing.Size(1120, 591);
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,7 +416,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_Maphim;
         private System.Windows.Forms.TextBox txt_Tenphim;
         private System.Windows.Forms.TextBox txt_Daodien;
         private System.Windows.Forms.TextBox txt_Thoiluong;
@@ -403,7 +423,6 @@
         private System.Windows.Forms.TextBox txt_Dotuoi;
         private System.Windows.Forms.TextBox txt_Quocgia;
         private System.Windows.Forms.TextBox txt_Nhasanxuat;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.RichTextBox txtTomtat;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ImageList imageList1;
@@ -413,7 +432,12 @@
         private System.Windows.Forms.Button btn_Xem;
         private System.Windows.Forms.Button btn;
         private System.Windows.Forms.PictureBox picFilm;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvPhim;
+        private System.Windows.Forms.Button btn_chonimg;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_Maphim;
+        private System.Windows.Forms.Label txtp;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtm_Ngaykhoichieu;
     }
 }
