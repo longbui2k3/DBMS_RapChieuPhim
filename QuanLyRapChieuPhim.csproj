@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\DBConnection.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="Forms\FormNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
