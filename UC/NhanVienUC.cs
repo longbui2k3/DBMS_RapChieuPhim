@@ -61,7 +61,8 @@ namespace QuanLyRapChieuPhim.UC
             NhanVien nhanVien = new NhanVien(txtMaNhanVien.Text, txtHoTen.Text, dtBirth.Value.Date,
                 txtEmail.Text, txtSdt.Text, txtGioiTinh.Text, txtDiaChi.Text, int.Parse(txtLuong.Text), txtCaLamViec.Text,
                 txtViTri.Text, txtTenNguoiDung.Text, txtMaChiNhanh.Text, txtMaChiNhanhQL.Text);
-            nvDAO.xuLi(nhanVien, "Delete");
+            /*nvDAO.xuLi(nhanVien, "Delete");*/
+            nvDAO.deleteNhanVien(nhanVien);
             emptyTextBox();
             LoadNhanVienList();
         }
@@ -70,8 +71,9 @@ namespace QuanLyRapChieuPhim.UC
         {
             NhanVien nhanVien = new NhanVien(txtMaNhanVien.Text, txtHoTen.Text, dtBirth.Value.Date,
                 txtEmail.Text, txtSdt.Text, txtGioiTinh.Text, txtDiaChi.Text, int.Parse(txtLuong.Text), txtCaLamViec.Text,
-                txtViTri.Text, txtTenNguoiDung.Text, txtMaChiNhanh.Text, txtMaChiNhanhQL.Text);
-            nvDAO.xuLi(nhanVien, "Add");
+                txtViTri.Text, txtTenNguoiDung.Text, txtMaChiNhanh.Text, txtMaChiNhanhQL.Text == "" ? txtMaChiNhanhQL.Text: null);
+            /*nvDAO.xuLi(nhanVien, "Add");*/
+            nvDAO.createNhanVien(nhanVien);
             emptyTextBox();
             LoadNhanVienList();
         }
@@ -80,8 +82,9 @@ namespace QuanLyRapChieuPhim.UC
         {
             NhanVien nhanVien = new NhanVien(txtMaNhanVien.Text, txtHoTen.Text, dtBirth.Value.Date,
                 txtEmail.Text, txtSdt.Text, txtGioiTinh.Text, txtDiaChi.Text, int.Parse(txtLuong.Text), txtCaLamViec.Text,
-                txtViTri.Text, txtTenNguoiDung.Text, txtMaChiNhanh.Text, txtMaChiNhanhQL.Text);
-            nvDAO.xuLi(nhanVien, "Edit");
+                txtViTri.Text, txtTenNguoiDung.Text, txtMaChiNhanh.Text.Trim(), txtMaChiNhanhQL.Text.Trim());
+            /*nvDAO.xuLi(nhanVien, "Edit");*/
+            nvDAO.updateNhanVien(nhanVien);
             emptyTextBox();
             LoadNhanVienList();
         }
