@@ -15,12 +15,6 @@ namespace QuanLyRapChieuPhim.UC
 {
     public partial class NhanVienUC : UserControl
     {
-        String connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QLRapPhim;Integrated Security=True";
-        SqlConnection conn;
-        SqlCommand cmd;
-        SqlDataAdapter adapter;
-        DataTable dt = new DataTable();
-        BindingSource customerList = new BindingSource();
         NhanVienDAO nvDAO = new NhanVienDAO();
         public NhanVienUC()
         {         
@@ -141,6 +135,12 @@ namespace QuanLyRapChieuPhim.UC
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
             editNhanVien();
+        }
+
+        private void btnSearchCus_Click(object sender, EventArgs e)
+        {
+            NhanVienDAO nhanVienDAO = new NhanVienDAO();
+            dgvNhanVien.DataSource = nhanVienDAO.searchNhanVien(txtSearchCus.Text);
         }
     }
 }

@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="DAO\DBConnection.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\PhongChieuPhimDao.cs" />
     <Compile Include="Forms\FormNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +111,12 @@
     <Compile Include="UC\PhimUC.Designer.cs">
       <DependentUpon>PhimUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\PhongChieuPhimUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\PhongChieuPhimUC.Designer.cs">
+      <DependentUpon>PhongChieuPhimUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ThongTinRapUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\PhimUC.resx">
       <DependentUpon>PhimUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\PhongChieuPhimUC.resx">
+      <DependentUpon>PhongChieuPhimUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ThongTinRapUC.resx">
       <DependentUpon>ThongTinRapUC.cs</DependentUpon>
