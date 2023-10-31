@@ -14,17 +14,14 @@ namespace QuanLyRapChieuPhim.DAO
     internal class NhanVienDAO
     {
         SqlConnection conn = new DBConnection().conn;
-        SqlCommand cmd;
-        SqlDataAdapter adapter;
-        DataTable dt = new DataTable();
-
         public DataTable LayDanhSachNhanVien()
         {
+            DataTable dt = new DataTable();
             try
             {
                 conn.Open();
-                cmd = new SqlCommand("Select * from v_HienThiNhanVien", conn);
-                adapter = new SqlDataAdapter(cmd);
+                SqlCommand cmd = new SqlCommand("Select * from v_HienThiNhanVien", conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
             }
             catch (Exception ex)
@@ -36,7 +33,8 @@ namespace QuanLyRapChieuPhim.DAO
         }
         public void createNhanVien(NhanVien nhanvien)
         {
-            SqlCommand sql_cmd = new SqlCommand("proc_CreateNhanVien", conn);
+            conn.Open();
+            SqlCommand sql_cmd = new SqlCommand("proc_InsertNhanVien", conn);
             sql_cmd.CommandType = CommandType.StoredProcedure;
             sql_cmd.Parameters.Add("@HoVaTen", SqlDbType.NVarChar).Value = nhanvien.HoVaTen;
             sql_cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = nhanvien.NgaySinh;
@@ -50,12 +48,13 @@ namespace QuanLyRapChieuPhim.DAO
             sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = nhanvien.TenNguoiDung;
             sql_cmd.Parameters.Add("@MaChiNhanh", SqlDbType.VarChar, 25).Value = nhanvien.MaChiNhanh;
             sql_cmd.Parameters.Add("@MaChiNhanhQuanLy", SqlDbType.VarChar, 25).Value = nhanvien.MaChiNhanhQuanLy == "" ? (object)DBNull.Value : nhanvien.MaChiNhanhQuanLy;
-            conn.Open();
+            
             sql_cmd.ExecuteNonQuery();
             conn.Close();
         }
         public void updateNhanVien(NhanVien nhanvien)
         {
+            conn.Open();
             SqlCommand sql_cmd = new SqlCommand("proc_UpdateNhanVien", conn);
             sql_cmd.CommandType = CommandType.StoredProcedure;
             sql_cmd.Parameters.Add("@MaNhanVien", SqlDbType.VarChar).Value = nhanvien.MaNhanVien;
@@ -71,7 +70,7 @@ namespace QuanLyRapChieuPhim.DAO
             sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = nhanvien.TenNguoiDung;
             sql_cmd.Parameters.Add("@MaChiNhanh", SqlDbType.VarChar, 25).Value = nhanvien.MaChiNhanh;
             sql_cmd.Parameters.Add("@MaChiNhanhQuanLy", SqlDbType.VarChar, 25).Value = nhanvien.MaChiNhanhQuanLy == "" ? (object)DBNull.Value: nhanvien.MaChiNhanhQuanLy;
-            conn.Open();
+            
             sql_cmd.ExecuteNonQuery();
             conn.Close();
         }
@@ -83,6 +82,17 @@ namespace QuanLyRapChieuPhim.DAO
             sql_cmd.Parameters.AddWithValue("@MaNhanVien", SqlDbType.VarChar).Value = nhanvien.MaNhanVien;
             sql_cmd.ExecuteNonQuery();
             conn.Close();
+        }
+        public DataTable searchNhanVien(String search)
+        {
+            DataTable dt = new DataTable();
+            conn.Open();
+            SqlCommand sql_cmd = new SqlCommand("SELECT * FROM f_SearchNhanVien(@searchStr)", conn);
+            sql_cmd.Parameters.AddWithValue("@searchStr", search);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_cmd);
+            adapter.Fill(dt);
+            conn.Close();
+            return dt;
         }
     }
 }
