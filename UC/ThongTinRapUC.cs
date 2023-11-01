@@ -20,6 +20,9 @@ namespace QuanLyRapChieuPhim.UC
         private Button currButton;
         private PhimUC puc = new PhimUC();
         private KhachHangUC khuc = new KhachHangUC();
+        private PhongChieuPhimUC pcp = new PhongChieuPhimUC();
+        private GiaVeUC gvuc = new GiaVeUC();
+        private DoAnUC doAnUC = new DoAnUC();
         private void ClickToChangeColor(Button btn)
         {
             if (btn.ForeColor == Color.White)
@@ -58,6 +61,51 @@ namespace QuanLyRapChieuPhim.UC
                 panel_Main.Controls.Clear();
                 khuc.Dock = DockStyle.Fill;
                 panel_Main.Controls.Add(khuc);
+            }
+        }
+
+        private void btn_PhongChieuPhim_Click(object sender, EventArgs e)
+        {
+            if (currButton != null)
+                ClickToChangeColor(currButton);
+            currButton = btn_KhachHang;
+            ClickToChangeColor(btn_KhachHang);
+
+            if (!panel_Main.Controls.Contains(pcp))
+            {
+                panel_Main.Controls.Clear();
+                pcp.Dock = DockStyle.Fill;
+                panel_Main.Controls.Add(pcp);
+            }
+        }
+
+        private void btn_GiaVe_Click(object sender, EventArgs e)
+        {
+            if (currButton != null)
+                ClickToChangeColor(currButton);
+            currButton = btn_GiaVe;
+            ClickToChangeColor(btn_GiaVe);
+
+            if (!panel_Main.Controls.Contains(gvuc))
+            {
+                panel_Main.Controls.Clear();
+                gvuc.Dock = DockStyle.Fill;
+                panel_Main.Controls.Add(gvuc);
+            }
+        }
+
+        private void btn_DoAn_Click(object sender, EventArgs e)
+        {
+            if (currButton != null)
+                ClickToChangeColor(currButton);
+            currButton = btn_DoAn;
+            ClickToChangeColor(btn_DoAn);
+
+            if (!panel_Main.Controls.Contains(doAnUC))
+            {
+                panel_Main.Controls.Clear();
+                doAnUC.Dock = DockStyle.Fill;
+                panel_Main.Controls.Add(doAnUC);
             }
         }
     }

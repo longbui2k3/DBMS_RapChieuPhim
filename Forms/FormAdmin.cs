@@ -21,6 +21,7 @@ namespace QuanLyRapChieuPhim.Forms
         private Button currButton;
         private ThongTinRapUC ttruc = new ThongTinRapUC();
         private NhanVienUC nvuc = new NhanVienUC();
+        private ChiNhanhUC cnuc = new ChiNhanhUC();
         private void ClickToChangeColor(Button btn)
         {
             if (btn.ForeColor == Color.White)
@@ -85,6 +86,21 @@ namespace QuanLyRapChieuPhim.Forms
                 ClickToChangeColor(currButton);
             currButton = btn_DangXuat;
             ClickToChangeColor(btn_DangXuat);
+        }
+
+        private void btn_ChiNhanh_Click(object sender, EventArgs e)
+        {
+            if (currButton != null)
+                ClickToChangeColor(currButton);
+            currButton = btn_ChiNhanh;
+            ClickToChangeColor(btn_ChiNhanh);
+
+            if (!splitContainer1.Panel2.Controls.Contains(cnuc))
+            {
+                splitContainer1.Panel2.Controls.Clear();
+                cnuc.Dock = DockStyle.Fill;
+                splitContainer1.Panel2.Controls.Add(cnuc);
+            }
         }
     }
 }

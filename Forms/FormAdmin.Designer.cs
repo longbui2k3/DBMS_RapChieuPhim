@@ -32,7 +32,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_ChiNhanh = new System.Windows.Forms.Button();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
             this.btn_DangXuat = new System.Windows.Forms.Button();
             this.btn_NhanVien = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.OrangeRed;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_ChiNhanh);
             this.panel1.Controls.Add(this.btn_TaiKhoan);
             this.panel1.Controls.Add(this.btn_DangXuat);
             this.panel1.Controls.Add(this.btn_NhanVien);
@@ -90,19 +90,20 @@
             this.panel1.Size = new System.Drawing.Size(268, 532);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btn_ChiNhanh
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 249);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 62);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Chi Nhánh";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_ChiNhanh.FlatAppearance.BorderSize = 0;
+            this.btn_ChiNhanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ChiNhanh.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ChiNhanh.ForeColor = System.Drawing.Color.White;
+            this.btn_ChiNhanh.Location = new System.Drawing.Point(0, 249);
+            this.btn_ChiNhanh.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ChiNhanh.Name = "btn_ChiNhanh";
+            this.btn_ChiNhanh.Size = new System.Drawing.Size(268, 62);
+            this.btn_ChiNhanh.TabIndex = 5;
+            this.btn_ChiNhanh.Text = "Chi Nhánh";
+            this.btn_ChiNhanh.UseVisualStyleBackColor = true;
+            this.btn_ChiNhanh.Click += new System.EventHandler(this.btn_ChiNhanh_Click);
             // 
             // btn_TaiKhoan
             // 
@@ -206,6 +207,6 @@
         private System.Windows.Forms.Button btn_ThongTinRap;
         private System.Windows.Forms.Button btn_DoanhThu;
         private System.Windows.Forms.Button btn_TaiKhoan;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_ChiNhanh;
     }
 }
