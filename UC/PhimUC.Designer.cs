@@ -395,6 +395,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "PhimUC";
             this.Size = new System.Drawing.Size(1120, 591);
+            this.Load += new System.EventHandler(this.PhimUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).EndInit();
             this.ResumeLayout(false);
