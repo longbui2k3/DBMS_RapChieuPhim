@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DAO",
+    "\\Forms",
+    "\\Images",
+    "\\Models",
+    "\\UC"
   ],
-  "SelectedNode": "\\QuanLyRapChieuPhim.sln",
+  "SelectedNode": "\\UC\\NhanVienUC.cs",
   "PreviewInSolutionExplorer": false
 }

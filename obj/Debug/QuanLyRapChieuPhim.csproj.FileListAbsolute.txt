@@ -16,6 +16,7 @@ D:\DaiHoc\DBMS\Project\QuanLyRapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.KhachH
 D:\DaiHoc\DBMS\Project\QuanLyRapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.NhanVienUC.resources
 D:\DaiHoc\DBMS\Project\QuanLyRapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.PhimUC.resources
 D:\DaiHoc\DBMS\Project\QuanLyRapChieuPhim\obj\Debug\QuanLyRapChieuPhim.Forms.FormAdmin.resources
+<<<<<<< HEAD
 C:\Users\Lenovo\Desktop\DBMS_RapChieuPhim\bin\Debug\QLRapPhim.mdf
 C:\Users\Lenovo\Desktop\DBMS_RapChieuPhim\bin\Debug\QLRapPhim_log.ldf
 C:\Users\Lenovo\Desktop\DBMS_RapChieuPhim\bin\Debug\QuanLyRapChieuPhim.exe.config
@@ -50,3 +51,23 @@ D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.csproj.Cor
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.exe
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.pdb
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.PhongChieuPhimUC.resources
+=======
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\bin\Debug\QLRapPhim.mdf
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\bin\Debug\QLRapPhim_log.ldf
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\bin\Debug\QuanLyRapChieuPhim.exe.config
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\bin\Debug\QuanLyRapChieuPhim.exe
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\bin\Debug\QuanLyRapChieuPhim.pdb
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.csproj.AssemblyReference.cache
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.csproj.SuggestedBindingRedirects.cache
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.FormNhanVien.resources
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.Forms.FormAdmin.resources
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.Properties.Resources.resources
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.KhachHangUC.resources
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.NhanVienUC.resources
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.PhimUC.resources
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.ThongTinRapUC.resources
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.csproj.GenerateResource.cache
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.csproj.CoreCompileInputs.cache
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.exe
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.pdb
+>>>>>>> d2380fa37bd12a64f7d6bcbc77b45f476e33ed29
