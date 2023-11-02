@@ -41,26 +41,23 @@ namespace QuanLyRapChieuPhim.DAO
             SqlCommand cmd = new SqlCommand("select * from view_KhachHang", dao.conn);
             return LayDS(cmd);
         }
-        /*
-                public DataTable TimKiem(KhachHang kh)
-                {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM KhachHang Where MaKhachHang = '{0}' or HoVaTen = '{1}'", dao.conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaKhachHang", SqlDbType.VarChar).Value = kh.MaKhachHang;
-                    cmd.Parameters.Add("@HoVaTen", SqlDbType.NVarChar).Value = kh.HoVaTen;
-                    return LayDS(cmd);
-                }
+        
+        public DataTable TimKiemKhachHang(string searchKH)
+        {
+        SqlCommand cmd = new SqlCommand("select * from func_SearchKhachHang(@searchKH)", dao.conn);
+        cmd.Parameters.Add("@searchKH", SqlDbType.VarChar).Value = searchKH;
+        return LayDS(cmd);
+        }
 
-        */
+      
 
-        public void Them(KhachHang kh)
+        public void ThemKhachHang(KhachHang kh)
         {
             try
             {
                 dao.conn.Open();
                 SqlCommand cmd = new SqlCommand("proc_InsertKhachHang", dao.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@MaKhachHang", SqlDbType.VarChar).Value = kh.MaKhachHang;
                 cmd.Parameters.Add("@HoVaTen", SqlDbType.NVarChar).Value = kh.HoVaTen;
                 cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = kh.NgaySinh;
                 cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = kh.Email;
@@ -82,7 +79,7 @@ namespace QuanLyRapChieuPhim.DAO
             }
         }
 
-        public void Xoa(KhachHang kh)
+        public void XoaKhachHang(KhachHang kh)
         {
             try
             {
@@ -105,7 +102,7 @@ namespace QuanLyRapChieuPhim.DAO
             }
         }
 
-        public void Sua(KhachHang kh)
+        public void SuaKhachHang(KhachHang kh)
         {
             try
             {

@@ -73,3 +73,5 @@ D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.pdb
 >>>>>>> d2380fa37bd12a64f7d6bcbc77b45f476e33ed29
 C:\Users\Lenovo\Desktop\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.PhongChieuPhimUC.resources
 C:\Users\Lenovo\Desktop\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.DoAnUC.resources
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.PhongChieuPhimUC.resources
+>>>>>>> bc0554f5c1501f4496abcfea825444f7a1f50c5d
