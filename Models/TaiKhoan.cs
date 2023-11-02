@@ -11,10 +11,13 @@ namespace QuanLyRapChieuPhim.Models
         public String TenNguoiDung { get; set; }
         public String MatKhau { get; set; }
 
-        public TaiKhoan(string tenNguoiDung, string matKhau)
+        public String LoaiTaiKhoan { get; set; }
+
+        public TaiKhoan(string tenNguoiDung, string matKhau, string loaiTaiKhoan)
         {
             TenNguoiDung = tenNguoiDung;
             MatKhau = matKhau;
+            LoaiTaiKhoan = loaiTaiKhoan;
         }
     }
 }
