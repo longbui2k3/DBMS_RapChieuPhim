@@ -71,3 +71,4 @@ D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.csproj.CoreCompi
 D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.exe
 D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.pdb
 >>>>>>> d2380fa37bd12a64f7d6bcbc77b45f476e33ed29
+D:\HK1_Nam3\DBMS\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.PhongChieuPhimUC.resources
