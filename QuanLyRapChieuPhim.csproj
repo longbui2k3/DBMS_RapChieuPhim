@@ -95,6 +95,24 @@
     <Compile Include="Models\Ve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\ChiNhanhUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ChiNhanhUC.Designer.cs">
+      <DependentUpon>ChiNhanhUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\DoAnUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\DoAnUC.Designer.cs">
+      <DependentUpon>DoAnUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\GiaVeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\GiaVeUC.Designer.cs">
+      <DependentUpon>GiaVeUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\KhachHangUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
