@@ -133,5 +133,16 @@ namespace QuanLyRapChieuPhim.UC
             txtTomtat.Text = "";
             txt_Dotuoi.Text = "";
         }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Timkiem_Click(object sender, EventArgs e)
+        {
+            PhimDAO phimDAO = new PhimDAO();
+            dgvPhim.DataSource = phimDAO.TimKiemPhim(txt_search.Text);
+        }
     }
 }

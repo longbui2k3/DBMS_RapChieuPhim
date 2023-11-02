@@ -107,6 +107,12 @@ namespace QuanLyRapChieuPhim.DAO
                 dao.conn.Close();
             }
         }
-        
+        public DataTable TimKiemPhim(string searchP)
+        {
+            SqlCommand cmd = new SqlCommand("select * from func_SearchPhim(@string)", dao.conn);
+            cmd.Parameters.Add("@string", SqlDbType.NVarChar).Value = searchP;
+            return LayDanhSachPhim(cmd);
+        }
+
     }
 }
