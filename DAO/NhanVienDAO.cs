@@ -34,7 +34,7 @@ namespace QuanLyRapChieuPhim.DAO
         public void createNhanVien(NhanVien nhanvien)
         {
             conn.Open();
-            SqlCommand sql_cmd = new SqlCommand("proc_InsertNhanVien", conn);
+            SqlCommand sql_cmd = new SqlCommand("proc_CreateNhanVien", conn);
             sql_cmd.CommandType = CommandType.StoredProcedure;
             sql_cmd.Parameters.Add("@HoVaTen", SqlDbType.NVarChar).Value = nhanvien.HoVaTen;
             sql_cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = nhanvien.NgaySinh;
