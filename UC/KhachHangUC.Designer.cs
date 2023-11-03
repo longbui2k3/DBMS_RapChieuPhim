@@ -54,6 +54,7 @@
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cb_GioiTinh = new System.Windows.Forms.ComboBox();
+            this.txt_Search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.data_KhachHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,7 +165,7 @@
             // 
             // btn_TimKiem
             // 
-            this.btn_TimKiem.Location = new System.Drawing.Point(269, 193);
+            this.btn_TimKiem.Location = new System.Drawing.Point(343, 194);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(124, 23);
             this.btn_TimKiem.TabIndex = 15;
@@ -289,10 +290,18 @@
             this.cb_GioiTinh.Size = new System.Drawing.Size(121, 24);
             this.cb_GioiTinh.TabIndex = 20;
             // 
+            // txt_Search
+            // 
+            this.txt_Search.Location = new System.Drawing.Point(180, 194);
+            this.txt_Search.Name = "txt_Search";
+            this.txt_Search.Size = new System.Drawing.Size(157, 22);
+            this.txt_Search.TabIndex = 21;
+            // 
             // KhachHangUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.cb_GioiTinh);
             this.Controls.Add(this.data_KhachHang);
             this.Controls.Add(this.btn_Sua);
@@ -349,5 +358,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.ComboBox cb_GioiTinh;
+        private System.Windows.Forms.TextBox txt_Search;
     }
 }

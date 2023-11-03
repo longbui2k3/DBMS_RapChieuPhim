@@ -64,6 +64,8 @@
             this.txtp = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dtm_Ngaykhoichieu = new System.Windows.Forms.DateTimePicker();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.btn_Timkiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.SuspendLayout();
@@ -153,7 +155,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(662, 24);
+            this.label10.Location = new System.Drawing.Point(662, 7);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 16);
             this.label10.TabIndex = 10;
@@ -219,7 +221,7 @@
             // 
             // txtTomtat
             // 
-            this.txtTomtat.Location = new System.Drawing.Point(665, 50);
+            this.txtTomtat.Location = new System.Drawing.Point(665, 27);
             this.txtTomtat.Name = "txtTomtat";
             this.txtTomtat.Size = new System.Drawing.Size(242, 171);
             this.txtTomtat.TabIndex = 22;
@@ -356,10 +358,30 @@
             this.dtm_Ngaykhoichieu.Size = new System.Drawing.Size(201, 22);
             this.dtm_Ngaykhoichieu.TabIndex = 69;
             // 
+            // txt_search
+            // 
+            this.txt_search.Location = new System.Drawing.Point(568, 215);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(161, 22);
+            this.txt_search.TabIndex = 70;
+            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
+            // 
+            // btn_Timkiem
+            // 
+            this.btn_Timkiem.Location = new System.Drawing.Point(748, 210);
+            this.btn_Timkiem.Name = "btn_Timkiem";
+            this.btn_Timkiem.Size = new System.Drawing.Size(102, 33);
+            this.btn_Timkiem.TabIndex = 71;
+            this.btn_Timkiem.Text = "Tìm kiếm";
+            this.btn_Timkiem.UseVisualStyleBackColor = true;
+            this.btn_Timkiem.Click += new System.EventHandler(this.btn_Timkiem_Click);
+            // 
             // PhimUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_Timkiem);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.dtm_Ngaykhoichieu);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtp);
@@ -440,5 +462,7 @@
         private System.Windows.Forms.Label txtp;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtm_Ngaykhoichieu;
+        private System.Windows.Forms.TextBox txt_search;
+        private System.Windows.Forms.Button btn_Timkiem;
     }
 }

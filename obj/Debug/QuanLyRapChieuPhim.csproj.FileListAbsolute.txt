@@ -6,6 +6,7 @@ D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.csproj.Sug
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.FormNhanVien.resources
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.Forms.FormAdmin.resources
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.Properties.Resources.resources
+D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.DoAnUC.resources
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.KhachHangUC.resources
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.NhanVienUC.resources
 D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.UC.PhimUC.resources

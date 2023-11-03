@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DAO",
-    "\\Forms",
-    "\\Images",
-    "\\Models",
     "\\UC"
   ],
-  "SelectedNode": "\\UC\\NhanVienUC.cs",
+  "SelectedNode": "\\UC\\DoAnUC.cs",
   "PreviewInSolutionExplorer": false
 }

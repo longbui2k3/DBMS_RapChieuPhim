@@ -33,21 +33,21 @@ namespace QuanLyRapChieuPhim.UC
         private void btn_Them_Click(object sender, EventArgs e)
         {
             KhachHang kh = new KhachHang(txt_MaKhachHang.Text, txt_HoVaTen.Text, date_NgaySinh.Value, txt_Email.Text, txt_SoDienThoai.Text, cb_GioiTinh.Text, txt_DiaChi.Text);
-            khdao.Them(kh);
+            khdao.ThemKhachHang(kh);
             HienThiDS();
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             KhachHang kh = new KhachHang(txt_MaKhachHang.Text, txt_HoVaTen.Text, date_NgaySinh.Value, txt_Email.Text, txt_SoDienThoai.Text, cb_GioiTinh.Text, txt_DiaChi.Text);
-            khdao.Xoa(kh);
+            khdao.XoaKhachHang(kh);
             HienThiDS();
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             KhachHang kh = new KhachHang(txt_MaKhachHang.Text, txt_HoVaTen.Text, date_NgaySinh.Value, txt_Email.Text, txt_SoDienThoai.Text, cb_GioiTinh.Text, txt_DiaChi.Text);
-            khdao.Sua(kh);
+            khdao.SuaKhachHang(kh);
             HienThiDS();
         }
 
@@ -69,8 +69,7 @@ namespace QuanLyRapChieuPhim.UC
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
-            KhachHang kh = new KhachHang(txt_MaKhachHang.Text, txt_HoVaTen.Text, date_NgaySinh.Value, txt_Email.Text, txt_SoDienThoai.Text, cb_GioiTinh.Text, txt_DiaChi.Text);
-           // this.data_KhachHang.DataSource = khdao.TimKiem(kh);
+            this.data_KhachHang.DataSource = khdao.TimKiemKhachHang(txt_Search.Text);
         }
     }
 }
