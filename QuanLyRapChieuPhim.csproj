@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ChiNhanhDAO.cs" />
     <Compile Include="DAO\DBConnection.cs" />
     <Compile Include="DAO\DoAnDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
@@ -166,6 +167,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\ChiNhanhUC.resx">
+      <DependentUpon>ChiNhanhUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\DoAnUC.resx">
       <DependentUpon>DoAnUC.cs</DependentUpon>
     </EmbeddedResource>

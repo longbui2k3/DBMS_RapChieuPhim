@@ -27,7 +27,7 @@ namespace QuanLyRapChieuPhim.UC
 
         private void HienThiDS()
         {
-            this.data_KhachHang.DataSource = khdao.DanhSachKhacgHang();
+            this.data_KhachHang.DataSource = khdao.DanhSachKhachHang();
         }
 
         private void btn_Them_Click(object sender, EventArgs e)

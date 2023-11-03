@@ -36,7 +36,7 @@ namespace QuanLyRapChieuPhim.DAO
             return dskh;
         }
 
-        public DataTable DanhSachKhacgHang()
+        public DataTable DanhSachKhachHang()
         { 
             SqlCommand cmd = new SqlCommand("select * from view_KhachHang", dao.conn);
             return LayDS(cmd);
@@ -45,7 +45,7 @@ namespace QuanLyRapChieuPhim.DAO
         public DataTable TimKiemKhachHang(string searchKH)
         {
         SqlCommand cmd = new SqlCommand("select * from func_SearchKhachHang(@searchKH)", dao.conn);
-        cmd.Parameters.Add("@searchKH", SqlDbType.VarChar).Value = searchKH;
+        cmd.Parameters.Add("@searchKH", SqlDbType.NVarChar).Value = searchKH;
         return LayDS(cmd);
         }
 
