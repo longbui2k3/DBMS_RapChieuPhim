@@ -19,5 +19,11 @@ namespace QuanLyRapChieuPhim.Models
             MatKhau = matKhau;
             LoaiTaiKhoan = loaiTaiKhoan;
         }
+        public TaiKhoan(string tenNguoiDung, string matKhau)
+        {
+            TenNguoiDung = tenNguoiDung;
+            MatKhau = matKhau;
+        }
+
     }
 }

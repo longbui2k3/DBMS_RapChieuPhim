@@ -23,6 +23,8 @@ namespace QuanLyRapChieuPhim.UC
         private PhongChieuPhimUC pcp = new PhongChieuPhimUC();
         private GiaVeUC gvuc = new GiaVeUC();
         private DoAnUC doAnUC = new DoAnUC();
+        private LichSuVeUC lsvUC = new LichSuVeUC();
+        private LichChieuUC lcuc = new LichChieuUC();
         private void ClickToChangeColor(Button btn)
         {
             if (btn.ForeColor == Color.White)
@@ -68,8 +70,8 @@ namespace QuanLyRapChieuPhim.UC
         {
             if (currButton != null)
                 ClickToChangeColor(currButton);
-            currButton = btn_KhachHang;
-            ClickToChangeColor(btn_KhachHang);
+            currButton = btn_PhongChieuPhim;
+            ClickToChangeColor(btn_PhongChieuPhim);
 
             if (!panel_Main.Controls.Contains(pcp))
             {
@@ -106,6 +108,36 @@ namespace QuanLyRapChieuPhim.UC
                 panel_Main.Controls.Clear();
                 doAnUC.Dock = DockStyle.Fill;
                 panel_Main.Controls.Add(doAnUC);
+            }
+        }
+
+        private void btn_Ve_Click(object sender, EventArgs e)
+        {
+            if (currButton != null)
+                ClickToChangeColor(currButton);
+            currButton = btn_Ve;
+            ClickToChangeColor(btn_Ve);
+
+            if (!panel_Main.Controls.Contains(lsvUC))
+            {
+                panel_Main.Controls.Clear();
+                lsvUC.Dock = DockStyle.Fill;
+                panel_Main.Controls.Add(lsvUC);
+            }
+        }
+
+        private void btn_LichChieu_Click(object sender, EventArgs e)
+        {
+            if (currButton != null)
+                ClickToChangeColor(currButton);
+            currButton = btn_LichChieu;
+            ClickToChangeColor(btn_LichChieu);
+
+            if (!panel_Main.Controls.Contains(lcuc))
+            {
+                panel_Main.Controls.Clear();
+                lcuc.Dock = DockStyle.Fill;
+                panel_Main.Controls.Add(lcuc);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,21 +15,33 @@ namespace QuanLyRapChieuPhim.DAO
     internal class TaiKhoanDao
     {
         SqlConnection conn = new DBConnection().conn;
-        public DataTable LayDanhSachTaiKhoan()
+        public SqlDataReader LayDanhSachTaiKhoan()
         {
-            DataTable dt = new DataTable();
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("Select * from v_HienThiTaiKhoan", conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
+                SqlDataReader reader = cmd.ExecuteReader();
+                return reader;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally { conn.Close(); }
+            return null;
+        }
+
+        public DataTable DangNhap(TaiKhoan taiKhoan)
+        {
+            conn.Open();
+            DataTable dt = new DataTable();
+            SqlCommand sql_cmd = new SqlCommand("Select * from func_DangNhap(@TenNguoiDung, @MatKhau)", conn);
+            sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = taiKhoan.TenNguoiDung;
+            sql_cmd.Parameters.Add("@MatKhau", SqlDbType.VarChar).Value = taiKhoan.MatKhau;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_cmd);
+            adapter.Fill(dt);
+            conn.Close();
             return dt;
         }
 
@@ -64,16 +77,13 @@ namespace QuanLyRapChieuPhim.DAO
             sql_cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public DataTable searchTaiKhoan(String search)
+        public SqlDataReader searchTaiKhoan(String search)
         {
-            DataTable dt = new DataTable();
             conn.Open();
             SqlCommand sql_cmd = new SqlCommand("SELECT * FROM f_SearchTaiKhoan(@searchStr)", conn);
             sql_cmd.Parameters.AddWithValue("@searchStr", search);
-            SqlDataAdapter adapter = new SqlDataAdapter(sql_cmd);
-            adapter.Fill(dt);
-            conn.Close();
-            return dt;
+            SqlDataReader reader = sql_cmd.ExecuteReader();
+            return reader;
         }
     }
 }

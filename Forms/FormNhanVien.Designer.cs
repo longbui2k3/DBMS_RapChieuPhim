@@ -32,9 +32,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_DangXuat = new System.Windows.Forms.Button();
+            this.btn_BanVe = new System.Windows.Forms.Button();
+            this.btn_ThongTinCaNhan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -75,55 +75,58 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.OrangeRed;
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_DangXuat);
+            this.panel1.Controls.Add(this.btn_BanVe);
+            this.panel1.Controls.Add(this.btn_ThongTinCaNhan);
             this.panel1.Location = new System.Drawing.Point(0, 149);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(268, 532);
             this.panel1.TabIndex = 0;
             // 
-            // button2
+            // btn_DangXuat
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 62);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(268, 62);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Bán Vé";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_DangXuat.FlatAppearance.BorderSize = 0;
+            this.btn_DangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DangXuat.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangXuat.ForeColor = System.Drawing.Color.White;
+            this.btn_DangXuat.Location = new System.Drawing.Point(0, 124);
+            this.btn_DangXuat.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(268, 62);
+            this.btn_DangXuat.TabIndex = 2;
+            this.btn_DangXuat.Text = "Đăng Xuất";
+            this.btn_DangXuat.UseVisualStyleBackColor = true;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
-            // button1
+            // btn_BanVe
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 62);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Thông Tin Cá Nhân";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_BanVe.FlatAppearance.BorderSize = 0;
+            this.btn_BanVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BanVe.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BanVe.ForeColor = System.Drawing.Color.White;
+            this.btn_BanVe.Location = new System.Drawing.Point(0, 62);
+            this.btn_BanVe.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_BanVe.Name = "btn_BanVe";
+            this.btn_BanVe.Size = new System.Drawing.Size(268, 62);
+            this.btn_BanVe.TabIndex = 1;
+            this.btn_BanVe.Text = "Bán Vé";
+            this.btn_BanVe.UseVisualStyleBackColor = true;
+            this.btn_BanVe.Click += new System.EventHandler(this.btn_BanVe_Click);
             // 
-            // button3
+            // btn_ThongTinCaNhan
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 124);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(268, 62);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Đăng Xuất";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_ThongTinCaNhan.FlatAppearance.BorderSize = 0;
+            this.btn_ThongTinCaNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ThongTinCaNhan.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThongTinCaNhan.ForeColor = System.Drawing.Color.White;
+            this.btn_ThongTinCaNhan.Location = new System.Drawing.Point(0, 0);
+            this.btn_ThongTinCaNhan.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ThongTinCaNhan.Name = "btn_ThongTinCaNhan";
+            this.btn_ThongTinCaNhan.Size = new System.Drawing.Size(268, 62);
+            this.btn_ThongTinCaNhan.TabIndex = 0;
+            this.btn_ThongTinCaNhan.Text = "Thông Tin Cá Nhân";
+            this.btn_ThongTinCaNhan.UseVisualStyleBackColor = true;
+            this.btn_ThongTinCaNhan.Click += new System.EventHandler(this.btn_ThongTinCaNhan_Click);
             // 
             // FormNhanVien
             // 
@@ -148,9 +151,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_ThongTinCaNhan;
+        private System.Windows.Forms.Button btn_BanVe;
+        private System.Windows.Forms.Button btn_DangXuat;
     }
 }
 

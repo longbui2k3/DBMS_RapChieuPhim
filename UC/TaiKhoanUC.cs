@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 using QuanLyRapChieuPhim.DAO;
 using QuanLyRapChieuPhim.Models;
 
@@ -24,10 +28,6 @@ namespace QuanLyRapChieuPhim.UC
         {
             createTaiKhoan();
         }
-        private void btnUpdateAccount_Click(object sender, EventArgs e)
-        {
-            editTaiKhoan();
-        }
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
             deleteTaiKhoan();
@@ -39,13 +39,22 @@ namespace QuanLyRapChieuPhim.UC
 
         void LoadTaiKhoanList()
         {
+            SqlConnection conn = new DBConnection().conn;
             TaiKhoanDao taiKhoanDAO = new TaiKhoanDao();
-            dtgvAccount.DataSource = taiKhoanDAO.LayDanhSachTaiKhoan();
+            SqlDataReader reader = taiKhoanDAO.LayDanhSachTaiKhoan();
+            dtgvAccount.Rows.Clear();
+            List<object[]> list = new List<object[]>();
+            while (reader.Read())
+            {
+                dtgvAccount.Rows.Add(new object[] { reader[0], reader[1], reader[2], reader[3], Convert.ToBase64String((byte[])reader[4]) });
+            }
+            conn.Close();
+            
         }
 
         void deleteTaiKhoan()
         {
-            TaiKhoan taiKhoan = new TaiKhoan(txtUsername.Text, "", txtVaiTro.Text);
+            TaiKhoan taiKhoan = new TaiKhoan(txtUsername.Text, "", cb_LoaiTaiKhoan.Text);
             taiKhoanDAO.deleteTaiKhoan(taiKhoan);
             emptyTextBox();
             LoadTaiKhoanList();
@@ -53,27 +62,18 @@ namespace QuanLyRapChieuPhim.UC
 
         void createTaiKhoan()
         {
-            TaiKhoan taiKhoan = new TaiKhoan(txtUsername.Text, "", txtVaiTro.Text);
+            TaiKhoan taiKhoan = new TaiKhoan(txtUsername.Text, "", cb_LoaiTaiKhoan.Text);
             taiKhoanDAO.createTaiKhoan(taiKhoan);
             emptyTextBox();
             LoadTaiKhoanList();
         }
-
-        void editTaiKhoan()
-        {
-            TaiKhoan taiKhoan = new TaiKhoan(txtUsername.Text, "", txtVaiTro.Text);
-            taiKhoanDAO.updateTaiKhoan(taiKhoan);
-            emptyTextBox();
-            LoadTaiKhoanList();
-        }
-
         
         void emptyTextBox()
         {
             txtUsername.Text = "";
             txtMaNV.Text = "";
             txtTenNV.Text = "";
-            txtVaiTro.Text = "";
+            cb_LoaiTaiKhoan.Text = "";
         }
 
         private void btnSearchAccount_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace QuanLyRapChieuPhim.UC
             int i;
             i = dtgvAccount.CurrentRow.Index;
             txtUsername.Text = dtgvAccount.Rows[i].Cells[0].Value.ToString();
-            txtVaiTro.Text=dtgvAccount.Rows[i].Cells[1].Value.ToString();
+            cb_LoaiTaiKhoan.Text=dtgvAccount.Rows[i].Cells[1].Value.ToString();
             txtMaNV.Text = dtgvAccount.Rows[i].Cells[2].Value.ToString();
             txtTenNV.Text = dtgvAccount.Rows[i].Cells[3].Value.ToString();
         }

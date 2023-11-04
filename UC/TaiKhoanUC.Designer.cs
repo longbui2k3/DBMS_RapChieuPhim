@@ -32,11 +32,10 @@
             this.txtSearchAccount = new System.Windows.Forms.TextBox();
             this.btnSearchAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
-            this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.btnInsertAccount = new System.Windows.Forms.Button();
             this.btnShowAccount = new System.Windows.Forms.Button();
             this.grpAccount = new System.Windows.Forms.GroupBox();
-            this.txtVaiTro = new System.Windows.Forms.TextBox();
+            this.cb_LoaiTaiKhoan = new System.Windows.Forms.ComboBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
@@ -45,6 +44,11 @@
             this.lblStaffName_Account = new System.Windows.Forms.Label();
             this.lblStaffID_Account = new System.Windows.Forms.Label();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.grpAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
@@ -98,20 +102,9 @@
             this.btnDeleteAccount.UseVisualStyleBackColor = true;
             this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
-            // btnUpdateAccount
-            // 
-            this.btnUpdateAccount.Location = new System.Drawing.Point(536, 195);
-            this.btnUpdateAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpdateAccount.Name = "btnUpdateAccount";
-            this.btnUpdateAccount.Size = new System.Drawing.Size(91, 32);
-            this.btnUpdateAccount.TabIndex = 34;
-            this.btnUpdateAccount.Text = "Sửa";
-            this.btnUpdateAccount.UseVisualStyleBackColor = true;
-            this.btnUpdateAccount.Click += new System.EventHandler(this.btnUpdateAccount_Click);
-            // 
             // btnInsertAccount
             // 
-            this.btnInsertAccount.Location = new System.Drawing.Point(410, 195);
+            this.btnInsertAccount.Location = new System.Drawing.Point(549, 195);
             this.btnInsertAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInsertAccount.Name = "btnInsertAccount";
             this.btnInsertAccount.Size = new System.Drawing.Size(91, 32);
@@ -134,7 +127,7 @@
             // grpAccount
             // 
             this.grpAccount.BackColor = System.Drawing.Color.Transparent;
-            this.grpAccount.Controls.Add(this.txtVaiTro);
+            this.grpAccount.Controls.Add(this.cb_LoaiTaiKhoan);
             this.grpAccount.Controls.Add(this.txtTenNV);
             this.grpAccount.Controls.Add(this.label1);
             this.grpAccount.Controls.Add(this.txtMaNV);
@@ -152,14 +145,16 @@
             this.grpAccount.TabStop = false;
             this.grpAccount.Text = "Thông tin tài khoản";
             // 
-            // txtVaiTro
+            // cb_LoaiTaiKhoan
             // 
-            this.txtVaiTro.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVaiTro.Location = new System.Drawing.Point(472, 82);
-            this.txtVaiTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtVaiTro.Name = "txtVaiTro";
-            this.txtVaiTro.Size = new System.Drawing.Size(216, 30);
-            this.txtVaiTro.TabIndex = 10;
+            this.cb_LoaiTaiKhoan.FormattingEnabled = true;
+            this.cb_LoaiTaiKhoan.Items.AddRange(new object[] {
+            "Admin",
+            "User"});
+            this.cb_LoaiTaiKhoan.Location = new System.Drawing.Point(472, 82);
+            this.cb_LoaiTaiKhoan.Name = "cb_LoaiTaiKhoan";
+            this.cb_LoaiTaiKhoan.Size = new System.Drawing.Size(216, 31);
+            this.cb_LoaiTaiKhoan.TabIndex = 10;
             // 
             // txtTenNV
             // 
@@ -234,6 +229,12 @@
             this.dtgvAccount.AllowUserToDeleteRows = false;
             this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dtgvAccount.Location = new System.Drawing.Point(38, 249);
             this.dtgvAccount.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvAccount.Name = "dtgvAccount";
@@ -243,13 +244,47 @@
             this.dtgvAccount.TabIndex = 29;
             this.dtgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAccount_CellClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tên Người Dùng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Loại Tài Khoản";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Mã NV";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Họ Và Tên";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Password";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // TaiKhoanUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDeleteAccount);
-            this.Controls.Add(this.btnUpdateAccount);
             this.Controls.Add(this.btnInsertAccount);
             this.Controls.Add(this.btnShowAccount);
             this.Controls.Add(this.grpAccount);
@@ -272,7 +307,6 @@
         private System.Windows.Forms.TextBox txtSearchAccount;
         private System.Windows.Forms.Button btnSearchAccount;
         private System.Windows.Forms.Button btnDeleteAccount;
-        private System.Windows.Forms.Button btnUpdateAccount;
         private System.Windows.Forms.Button btnInsertAccount;
         private System.Windows.Forms.Button btnShowAccount;
         private System.Windows.Forms.GroupBox grpAccount;
@@ -281,9 +315,14 @@
         private System.Windows.Forms.Label lblStaffName_Account;
         private System.Windows.Forms.Label lblStaffID_Account;
         private System.Windows.Forms.DataGridView dtgvAccount;
-        private System.Windows.Forms.TextBox txtVaiTro;
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.ComboBox cb_LoaiTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

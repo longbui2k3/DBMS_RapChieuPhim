@@ -128,8 +128,9 @@
             this.btn_Ve.Name = "btn_Ve";
             this.btn_Ve.Size = new System.Drawing.Size(160, 62);
             this.btn_Ve.TabIndex = 3;
-            this.btn_Ve.Text = "Vé";
+            this.btn_Ve.Text = "Lịch Sử Vé";
             this.btn_Ve.UseVisualStyleBackColor = true;
+            this.btn_Ve.Click += new System.EventHandler(this.btn_Ve_Click);
             // 
             // btn_LichChieu
             // 
@@ -144,6 +145,7 @@
             this.btn_LichChieu.TabIndex = 2;
             this.btn_LichChieu.Text = "Lịch Chiếu";
             this.btn_LichChieu.UseVisualStyleBackColor = true;
+            this.btn_LichChieu.Click += new System.EventHandler(this.btn_LichChieu_Click);
             // 
             // btn_Phim
             // 

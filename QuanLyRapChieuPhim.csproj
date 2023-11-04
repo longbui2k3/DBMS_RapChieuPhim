@@ -48,10 +48,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -72,6 +88,12 @@
     <Compile Include="DAO\PhongChieuPhimDao.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="DAO\TaiKhoanDao.cs" />
+    <Compile Include="Forms\FormDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDangNhap.Designer.cs">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +120,23 @@
     <Compile Include="Models\Ve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\BanVeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\BanVeUC.Designer.cs">
+      <DependentUpon>BanVeUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ChiNhanhUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\ChiNhanhUC.Designer.cs">
       <DependentUpon>ChiNhanhUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\DoanhThuUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\DoanhThuUC.Designer.cs">
+      <DependentUpon>DoanhThuUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\DoAnUC.cs">
       <SubType>UserControl</SubType>
@@ -121,6 +155,18 @@
     </Compile>
     <Compile Include="UC\KhachHangUC.Designer.cs">
       <DependentUpon>KhachHangUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\LichChieuUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\LichChieuUC.Designer.cs">
+      <DependentUpon>LichChieuUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\LichSuVeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\LichSuVeUC.Designer.cs">
+      <DependentUpon>LichSuVeUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\NhanVienUC.cs">
       <SubType>UserControl</SubType>
@@ -146,12 +192,21 @@
     <Compile Include="UC\TaiKhoanUC.Designer.cs">
       <DependentUpon>TaiKhoanUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\ThongTinCaNhanUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ThongTinCaNhanUC.Designer.cs">
+      <DependentUpon>ThongTinCaNhanUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ThongTinRapUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\ThongTinRapUC.Designer.cs">
       <DependentUpon>ThongTinRapUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormDangNhap.resx">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,14 +222,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\BanVeUC.resx">
+      <DependentUpon>BanVeUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\ChiNhanhUC.resx">
       <DependentUpon>ChiNhanhUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\DoanhThuUC.resx">
+      <DependentUpon>DoanhThuUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\DoAnUC.resx">
       <DependentUpon>DoAnUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\KhachHangUC.resx">
       <DependentUpon>KhachHangUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\LichChieuUC.resx">
+      <DependentUpon>LichChieuUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\LichSuVeUC.resx">
+      <DependentUpon>LichSuVeUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\NhanVienUC.resx">
       <DependentUpon>NhanVienUC.cs</DependentUpon>
@@ -188,9 +255,13 @@
     <EmbeddedResource Include="UC\TaiKhoanUC.resx">
       <DependentUpon>TaiKhoanUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\ThongTinCaNhanUC.resx">
+      <DependentUpon>ThongTinCaNhanUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\ThongTinRapUC.resx">
       <DependentUpon>ThongTinRapUC.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -205,6 +276,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\attachment_72251124.png" />
     <Content Include="Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
