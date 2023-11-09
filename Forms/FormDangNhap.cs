@@ -17,9 +17,11 @@ namespace QuanLyRapChieuPhim.Forms
     public partial class FormDangNhap : Form
     {
         TaiKhoanDao tkDao = new TaiKhoanDao();
+        public static TextBox txtUsernameCopy;
         public FormDangNhap()
         {
             InitializeComponent();
+            txtUsernameCopy = txtUsername;
         }
         
         private void btn_DangNhap_Click(object sender, EventArgs e)

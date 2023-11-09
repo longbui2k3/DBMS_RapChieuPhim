@@ -13,7 +13,8 @@ namespace QuanLyRapChieuPhim.DAO
 {
     internal class NhanVienDAO
     {
-        SqlConnection conn = new DBConnection().conn;
+        public SqlConnection conn = new DBConnection().conn;
+
         public DataTable LayDanhSachNhanVien()
         {
             DataTable dt = new DataTable();
@@ -93,6 +94,24 @@ namespace QuanLyRapChieuPhim.DAO
             adapter.Fill(dt);
             conn.Close();
             return dt;
+        }
+
+
+        public SqlDataReader ThongTinCaNhan(string username)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand sql_cmd = new SqlCommand("SELECT * FROM func_ThongTinCaNhan(@username)", conn);
+                sql_cmd.Parameters.AddWithValue("@username", username);
+                var reader = sql_cmd.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
     }
 }
