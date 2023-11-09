@@ -35,7 +35,7 @@ namespace QuanLyRapChieuPhim.DAO
         }
         public DataTable DanhSachPhim()
         {
-            SqlCommand cmd = new SqlCommand("Select *from view_Phim", dao.conn);
+            SqlCommand cmd = new SqlCommand("Select * from view_Phim", dao.conn);
             return LayDanhSachPhim(cmd);
         }
 
@@ -114,5 +114,33 @@ namespace QuanLyRapChieuPhim.DAO
             return LayDanhSachPhim(cmd);
         }
 
+        public DataTable DoanhThuPhim(String maPhim, DateTime tuNgay, DateTime denNgay)
+        {
+            SqlCommand cmd = new SqlCommand("proc_DoanhThuPhim", dao.conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@MaPhim", SqlDbType.VarChar).Value = maPhim;
+            cmd.Parameters.Add("@TuNgay", SqlDbType.Date).Value = tuNgay;
+            cmd.Parameters.Add("@DenNgay", SqlDbType.Date).Value = denNgay;
+            DataTable dash = new DataTable();
+            dao.conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dash);
+            dao.conn.Close();
+            return dash;
+        }
+        public int TongDoanhThu(String maPhim, DateTime tuNgay, DateTime denNgay)
+        {
+            SqlCommand cmd = new SqlCommand("proc_TongDoanhThu", dao.conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@MaPhim", SqlDbType.VarChar).Value = maPhim;
+            cmd.Parameters.Add("@TuNgay", SqlDbType.Date).Value = tuNgay;
+            cmd.Parameters.Add("@DenNgay", SqlDbType.Date).Value = denNgay;
+            DataTable dash = new DataTable();
+            dao.conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dash);
+            dao.conn.Close();
+            return (int)dash.Rows[0][0];
+        }
     }
 }
