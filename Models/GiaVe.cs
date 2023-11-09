@@ -9,17 +9,13 @@ namespace QuanLyRapChieuPhim.Models
     internal class GiaVe
     {
         public String MaGiaVe { get; set; }
-        public DateTime NgayChieu { get; set; }
-        public TimeSpan ThoiGianChieu { get; set; }
-        public bool NgayLe { get; set; }
+        public String LoaiVe { get; set; }
         public int Gia { get; set; }
 
-        public GiaVe(string maGiaVe, DateTime ngayChieu, TimeSpan thoiGianChieu, bool ngayLe, int gia)
+        public GiaVe(string maGiaVe, string loaiVe, int gia)
         {
             MaGiaVe = maGiaVe;
-            NgayChieu = ngayChieu;
-            ThoiGianChieu = thoiGianChieu;
-            NgayLe = ngayLe;
+            LoaiVe = loaiVe;
             Gia = gia;
         }
     }
