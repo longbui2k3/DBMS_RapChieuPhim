@@ -84,6 +84,7 @@ namespace QuanLyRapChieuPhim.DAO
             sql_cmd.Parameters.AddWithValue("@searchStr", search);
             SqlDataReader reader = sql_cmd.ExecuteReader();
             return reader;
+
         }
     }
 }
