@@ -44,6 +44,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCaLamViec = new System.Windows.Forms.TextBox();
+            this.lblCusID = new System.Windows.Forms.Label();
+            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.lblCusINumber = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
@@ -60,8 +62,6 @@
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnShowCustomer = new System.Windows.Forms.Button();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.lblCusID = new System.Windows.Forms.Label();
-            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.grpCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
@@ -104,6 +104,7 @@
             this.grpCustomer.TabIndex = 17;
             this.grpCustomer.TabStop = false;
             this.grpCustomer.Text = "Thông tin nhân viên";
+            this.grpCustomer.Enter += new System.EventHandler(this.grpCustomer_Enter);
             // 
             // dtBirth
             // 
@@ -251,6 +252,27 @@
             this.txtCaLamViec.Name = "txtCaLamViec";
             this.txtCaLamViec.Size = new System.Drawing.Size(284, 44);
             this.txtCaLamViec.TabIndex = 7;
+            // 
+            // lblCusID
+            // 
+            this.lblCusID.AutoSize = true;
+            this.lblCusID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusID.Location = new System.Drawing.Point(36, 62);
+            this.lblCusID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCusID.Name = "lblCusID";
+            this.lblCusID.Size = new System.Drawing.Size(116, 36);
+            this.lblCusID.TabIndex = 4;
+            this.lblCusID.Text = "Ma NV";
+            // 
+            // txtMaNhanVien
+            // 
+            this.txtMaNhanVien.Enabled = false;
+            this.txtMaNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNhanVien.Location = new System.Drawing.Point(200, 58);
+            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.Size = new System.Drawing.Size(284, 44);
+            this.txtMaNhanVien.TabIndex = 2;
             // 
             // txtDiaChi
             // 
@@ -422,27 +444,6 @@
             this.dgvNhanVien.Size = new System.Drawing.Size(1974, 458);
             this.dgvNhanVien.TabIndex = 28;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
-            // 
-            // lblCusID
-            // 
-            this.lblCusID.AutoSize = true;
-            this.lblCusID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusID.Location = new System.Drawing.Point(36, 62);
-            this.lblCusID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCusID.Name = "lblCusID";
-            this.lblCusID.Size = new System.Drawing.Size(116, 36);
-            this.lblCusID.TabIndex = 4;
-            this.lblCusID.Text = "Ma NV";
-            // 
-            // txtMaNhanVien
-            // 
-            this.txtMaNhanVien.Enabled = false;
-            this.txtMaNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNhanVien.Location = new System.Drawing.Point(200, 58);
-            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(284, 44);
-            this.txtMaNhanVien.TabIndex = 2;
             // 
             // NhanVienUC
             // 
