@@ -79,5 +79,6 @@ namespace QuanLyRapChieuPhim.DAO
             dao.conn.Close();
             return dt;
         }
+
     }
 }

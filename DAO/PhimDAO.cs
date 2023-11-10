@@ -129,5 +129,12 @@ namespace QuanLyRapChieuPhim.DAO
             dao.conn.Close();
             return (int)dash.Rows[0][0];
         }
+        public DataTable DanhSachLichPhim(string maphim,string machinhanh)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.f_LichChieuPhimByMaPhimAndChiNhanh (@MaPhim,@MaChiNhanh) ", dao.conn);
+            cmd.Parameters.Add("@MaPhim", SqlDbType.NVarChar).Value = maphim;
+            cmd.Parameters.Add("@MaChiNhanh", SqlDbType.NVarChar).Value = machinhanh;
+            return LayDanhSachPhim(cmd);
+        }
     }
 }
