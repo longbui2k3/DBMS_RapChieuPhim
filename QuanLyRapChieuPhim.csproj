@@ -102,6 +102,7 @@
     <Compile Include="DAO\DBConnection.cs" />
     <Compile Include="DAO\DoAnDAO.cs" />
     <Compile Include="DAO\GiaVeDAO.cs" />
+    <Compile Include="DAO\LichChieuDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\PhimDAO.cs" />
     <Compile Include="DAO\PhongChieuPhimDao.cs" />

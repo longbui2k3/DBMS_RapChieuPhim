@@ -16,13 +16,13 @@ namespace QuanLyRapChieuPhim.DAO
     internal class PhimDAO
     {
         DBConnection dao = new DBConnection();
-
-        public DataTable LayDanhSachPhim(SqlCommand cmd)
+        public DataTable DanhSachPhim()
         {
             DataTable dash = new DataTable();
             try
             {
                 dao.conn.Open();
+                SqlCommand cmd = new SqlCommand("Select * from view_Phim", dao.conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dash);
             }
@@ -32,11 +32,6 @@ namespace QuanLyRapChieuPhim.DAO
             }
             finally { dao.conn.Close(); }
             return dash;
-        }
-        public DataTable DanhSachPhim()
-        {
-            SqlCommand cmd = new SqlCommand("Select * from view_Phim", dao.conn);
-            return LayDanhSachPhim(cmd);
         }
 
         public void createPhim(Phim phim) 
@@ -87,31 +82,23 @@ namespace QuanLyRapChieuPhim.DAO
             cmd.ExecuteNonQuery();
             dao.conn.Close();
         }
-        public void ThucThi(string sqlStr) 
+        public DataTable TimKiemPhim(string searchP)
         {
+            DataTable dash = new DataTable();
             try
             {
                 dao.conn.Open();
-                SqlCommand cmd = new SqlCommand(sqlStr, dao.conn);
-                if(cmd.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Thanh cong");
-                }
+                SqlCommand cmd = new SqlCommand("select * from func_SearchPhim(@string)", dao.conn);
+                cmd.Parameters.Add("@string", SqlDbType.NVarChar).Value = searchP;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dash);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                dao.conn.Close();
-            }
-        }
-        public DataTable TimKiemPhim(string searchP)
-        {
-            SqlCommand cmd = new SqlCommand("select * from func_SearchPhim(@string)", dao.conn);
-            cmd.Parameters.Add("@string", SqlDbType.NVarChar).Value = searchP;
-            return LayDanhSachPhim(cmd);
+            finally { dao.conn.Close(); }
+            return dash;
         }
 
         public DataTable DoanhThuPhim(String maPhim, DateTime tuNgay, DateTime denNgay)

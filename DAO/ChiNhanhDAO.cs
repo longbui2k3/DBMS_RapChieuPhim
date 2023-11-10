@@ -14,12 +14,13 @@ namespace QuanLyRapChieuPhim.DAO
     {
         DBConnection dao = new DBConnection();
 
-        public DataTable LayDS(SqlCommand cmd)
+        public DataTable DanhSachChiNhanh()
         {
             DataTable dskh = new DataTable();
             try
             {
                 dao.conn.Open();
+                SqlCommand cmd = new SqlCommand("select * from view_ChiNhanh", dao.conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dskh);
             }
@@ -34,17 +35,27 @@ namespace QuanLyRapChieuPhim.DAO
             return dskh;
         }
 
-        public DataTable DanhSachChiNhanh()
-        {
-            SqlCommand cmd = new SqlCommand("select * from view_ChiNhanh", dao.conn);
-            return LayDS(cmd);
-        }
-
         public DataTable TimKiemChiNhanh(string searchCN)
         {
-            SqlCommand cmd = new SqlCommand("select * from func_SearchChiNhanh(@searchCN)", dao.conn);
-            cmd.Parameters.Add("@searchCN", SqlDbType.NVarChar).Value = searchCN;
-            return LayDS(cmd);
+            
+            DataTable dskh = new DataTable();
+            try
+            {
+                dao.conn.Open();
+                SqlCommand cmd = new SqlCommand("select * from func_SearchChiNhanh(@searchCN)", dao.conn);
+                cmd.Parameters.Add("@searchCN", SqlDbType.NVarChar).Value = searchCN;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dskh);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                dao.conn.Close();
+            }
+            return dskh;
         }
 
 

@@ -142,5 +142,10 @@ namespace QuanLyRapChieuPhim.UC
             NhanVienDAO nhanVienDAO = new NhanVienDAO();
             dgvNhanVien.DataSource = nhanVienDAO.searchNhanVien(txtSearchCus.Text);
         }
+
+        private void grpCustomer_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

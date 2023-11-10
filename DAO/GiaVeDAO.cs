@@ -13,13 +13,13 @@ namespace QuanLyRapChieuPhim.DAO
     internal class GiaVeDAO
     {
         private DBConnection dao = new DBConnection();
-
-        public DataTable LayDanhSachGiaVe(SqlCommand cmd)
+        public DataTable DanhSachGiaVe()
         {
             DataTable dataTable = new DataTable();
             try
             {
                 dao.conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM view_GiaVe", dao.conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dataTable);
             }
@@ -32,12 +32,6 @@ namespace QuanLyRapChieuPhim.DAO
                 dao.conn.Close();
             }
             return dataTable;
-        }
-
-        public DataTable DanhSachGiaVe()
-        {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM view_GiaVe", dao.conn);
-            return LayDanhSachGiaVe(cmd);
         }
 
         public void CreateGiaVe(GiaVe giaVe)
@@ -74,25 +68,16 @@ namespace QuanLyRapChieuPhim.DAO
             dao.conn.Close();
         }
 
-        public void ThucThi(string sqlStr)
+        public DataTable searchGiaVe(String search)
         {
-            try
-            {
-                dao.conn.Open();
-                SqlCommand cmd = new SqlCommand(sqlStr, dao.conn);
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Thành công");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dao.conn.Close();
-            }
+            DataTable dt = new DataTable();
+            dao.conn.Open();
+            SqlCommand sql_cmd = new SqlCommand("SELECT * FROM func_SearchGiaVe(@searchStr)", dao.conn);
+            sql_cmd.Parameters.AddWithValue("@searchStr", search);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_cmd);
+            adapter.Fill(dt);
+            dao.conn.Close();
+            return dt;
         }
     }
 }

@@ -110,6 +110,36 @@ namespace QuanLyRapChieuPhim.UC
             LoadPhim();
 
         }
+        void XoaPhim()
+        {
+            Phim phim = new Phim(txt_Maphim.Text,
+                txt_Tenphim.Text,
+                nameImage,
+                int.Parse(txt_Thoiluong.Text), dtm_Ngaykhoichieu.Value,
+                txt_Daodien.Text,
+                txt_Quocgia.Text,
+                txt_Dienvienchinh.Text,
+                txt_Nhasanxuat.Text, txtTomtat.Text,
+                int.Parse(txt_Dotuoi.Text), 0);
+            phimDAO.deletePhim(phim);
+            emptyTextBox();
+            LoadPhim();
+        }
+        void SuaPhim()
+        {
+            Phim phim = new Phim(txt_Maphim.Text,
+                txt_Tenphim.Text,
+                nameImage,
+                int.Parse(txt_Thoiluong.Text), dtm_Ngaykhoichieu.Value,
+                txt_Daodien.Text,
+                txt_Quocgia.Text,
+                txt_Dienvienchinh.Text,
+                txt_Nhasanxuat.Text, txtTomtat.Text,
+                int.Parse(txt_Dotuoi.Text), 0);
+            phimDAO.updatePhim(phim);
+            emptyTextBox();
+            LoadPhim();
+        }
 
         private void txtTomtat_TextChanged(object sender, EventArgs e)
         {
@@ -143,6 +173,16 @@ namespace QuanLyRapChieuPhim.UC
         {
             PhimDAO phimDAO = new PhimDAO();
             dgvPhim.DataSource = phimDAO.TimKiemPhim(txt_search.Text);
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            XoaPhim();
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            SuaPhim();
         }
     }
 }

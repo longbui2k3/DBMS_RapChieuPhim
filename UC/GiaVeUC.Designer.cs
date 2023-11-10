@@ -70,6 +70,7 @@
             this.btnSearchCus.TabIndex = 80;
             this.btnSearchCus.Text = "Search";
             this.btnSearchCus.UseVisualStyleBackColor = true;
+            this.btnSearchCus.Click += new System.EventHandler(this.btnSearchCus_Click);
             // 
             // btn_Xoa
             // 

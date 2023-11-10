@@ -114,7 +114,7 @@ namespace QuanLyRapChieuPhim.UC
                 txt_LoaiVe.Text,
                 int.Parse(txt_GiaVe.Text)
                 );
-            giaveDAO.CreateGiaVe(giave);
+            giaveDAO.DeleteGiaVe(giave);
             emptyTextBox();
             LoadGiaVe();
         }
@@ -124,7 +124,7 @@ namespace QuanLyRapChieuPhim.UC
                 txt_LoaiVe.Text,
                 int.Parse(txt_GiaVe.Text)
                 );
-            giaveDAO.CreateGiaVe(giave);
+            giaveDAO.UpdateGiaVe(giave);
             emptyTextBox();
             LoadGiaVe();
         }
@@ -180,5 +180,9 @@ namespace QuanLyRapChieuPhim.UC
             }
         }
 
+        private void btnSearchCus_Click(object sender, EventArgs e)
+        {
+            dgvGiaVe.DataSource = giaveDAO.searchGiaVe(txt_Search.Text);
+        }
     }
 }
