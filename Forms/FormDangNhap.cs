@@ -17,11 +17,15 @@ namespace QuanLyRapChieuPhim.Forms
     public partial class FormDangNhap : Form
     {
         TaiKhoanDao tkDao = new TaiKhoanDao();
+        public static TextBox txtUsernameCopy;
+
         public FormDangNhap()
         {
             InitializeComponent();
+            txtUsernameCopy = txtUsername;
+
         }
-        
+
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
             TaiKhoan taiKhoan = new TaiKhoan(txtUsername.Text, txtPassword.Text);
@@ -50,6 +54,11 @@ namespace QuanLyRapChieuPhim.Forms
                 MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng!", "Đăng Nhập");
 
             }
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

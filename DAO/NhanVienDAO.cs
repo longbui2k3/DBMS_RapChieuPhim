@@ -74,6 +74,22 @@ namespace QuanLyRapChieuPhim.DAO
             sql_cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public SqlDataReader ThongTinCaNhan(string username)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand sql_cmd = new SqlCommand("SELECT * FROM func_ThongTinCaNhan(@username)", conn);
+                sql_cmd.Parameters.AddWithValue("@username", username);
+                var reader = sql_cmd.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
+        }
         public void deleteNhanVien(NhanVien nhanvien)
         {
             conn.Open();

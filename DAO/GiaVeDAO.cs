@@ -94,5 +94,6 @@ namespace QuanLyRapChieuPhim.DAO
                 dao.conn.Close();
             }
         }
+
     }
 }
