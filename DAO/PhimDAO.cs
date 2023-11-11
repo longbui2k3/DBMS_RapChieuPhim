@@ -131,10 +131,22 @@ namespace QuanLyRapChieuPhim.DAO
         }
         public DataTable DanhSachLichPhim(string maphim,string machinhanh)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.f_LichChieuPhimByMaPhimAndChiNhanh (@MaPhim,@MaChiNhanh) ", dao.conn);
-            cmd.Parameters.Add("@MaPhim", SqlDbType.NVarChar).Value = maphim;
-            cmd.Parameters.Add("@MaChiNhanh", SqlDbType.NVarChar).Value = machinhanh;
-            return LayDanhSachPhim(cmd);
+            DataTable dash = new DataTable();
+            try
+            {
+                dao.conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.f_LichChieuPhimByMaPhimAndChiNhanh (@MaPhim,@MaChiNhanh) ", dao.conn);
+                cmd.Parameters.Add("@MaPhim", SqlDbType.NVarChar).Value = maphim;
+                cmd.Parameters.Add("@MaChiNhanh", SqlDbType.NVarChar).Value = machinhanh;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dash);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally { dao.conn.Close(); }
+            return dash;
         }
     }
 }

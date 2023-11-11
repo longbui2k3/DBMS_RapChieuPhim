@@ -98,6 +98,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BanVeDAO.cs" />
     <Compile Include="DAO\ChiNhanhDAO.cs" />
     <Compile Include="DAO\DBConnection.cs" />
     <Compile Include="DAO\DoAnDAO.cs" />
@@ -108,6 +109,12 @@
     <Compile Include="DAO\PhongChieuPhimDao.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="DAO\TaiKhoanDao.cs" />
+    <Compile Include="Forms\FormBanVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBanVe.designer.cs">
+      <DependentUpon>FormBanVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +249,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoanhThu.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormBanVe.resx">
+      <DependentUpon>FormBanVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>

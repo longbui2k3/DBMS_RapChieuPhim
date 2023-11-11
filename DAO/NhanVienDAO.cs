@@ -111,23 +111,5 @@ namespace QuanLyRapChieuPhim.DAO
             conn.Close();
             return dt;
         }
-
-
-        public SqlDataReader ThongTinCaNhan(string username)
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand sql_cmd = new SqlCommand("SELECT * FROM func_ThongTinCaNhan(@username)", conn);
-                sql_cmd.Parameters.AddWithValue("@username", username);
-                var reader = sql_cmd.ExecuteReader();
-                return reader;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return null;
-        }
     }
 }

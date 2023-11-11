@@ -68,9 +68,24 @@ namespace QuanLyRapChieuPhim.DAO
         }
         public DataTable searchGhe(String maPhong)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM f_TimGheTrong(@MaPhong)", conn);
-            cmd.Parameters.Add("@MaPhong", SqlDbType.NVarChar).Value = maPhong;
-            return LayDS(cmd);
+            DataTable dskh = new DataTable();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM f_TimGheTrong(@MaPhong)", conn);
+                cmd.Parameters.Add("@MaPhong", SqlDbType.NVarChar).Value = maPhong;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dskh);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dskh;
         }
         public void updateoneGhe(int maghe)
         {

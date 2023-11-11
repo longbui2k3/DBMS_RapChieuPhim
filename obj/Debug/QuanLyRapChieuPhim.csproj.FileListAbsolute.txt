@@ -221,3 +221,4 @@ C:\Users\Lenovo\Desktop\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.csproj.Co
 C:\Users\Lenovo\Desktop\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.exe
 C:\Users\Lenovo\Desktop\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.pdb
 >>>>>>> 4748b40b4c49a68a4edd61c45d285ca9f055054e
+D:\DaiHoc\DBMS\Project\DBMS_RapChieuPhim\obj\Debug\QuanLyRapChieuPhim.Forms.FormBanVe.resources
