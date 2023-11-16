@@ -58,7 +58,7 @@
             this.dgv_LichChieu.RowTemplate.Height = 24;
             this.dgv_LichChieu.Size = new System.Drawing.Size(1068, 309);
             this.dgv_LichChieu.TabIndex = 0;
-            this.dgv_LichChieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LichChieu_CellContentClick);
+            this.dgv_LichChieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LichChieu_CellClick);
             // 
             // lblCusID
             // 
@@ -87,7 +87,7 @@
             this.dgv_KhachHang.RowTemplate.Height = 24;
             this.dgv_KhachHang.Size = new System.Drawing.Size(597, 131);
             this.dgv_KhachHang.TabIndex = 76;
-            this.dgv_KhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_KhachHang_CellContentClick);
+            this.dgv_KhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_KhachHang_CellClick);
             // 
             // btn_search
             // 

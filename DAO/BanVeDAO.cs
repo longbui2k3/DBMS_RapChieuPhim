@@ -103,7 +103,7 @@ namespace QuanLyRapChieuPhim.DAO
             }
             finally { conn.Close(); }
         }
-        public void createVe(String manv, String makh, int maghe,  String magiave, String malichchieu )
+        public void createVe(String manv, String makh, int maghe,  String magiave, String malichchieu,int tongtien )
         {
             try
             {
@@ -115,6 +115,7 @@ namespace QuanLyRapChieuPhim.DAO
                 cmd.Parameters.AddWithValue("@MaGhe", maghe);
                 cmd.Parameters.AddWithValue("@MaGiaVe", magiave);
                 cmd.Parameters.AddWithValue("@MaLichChieu", malichchieu);
+                cmd.Parameters.AddWithValue("@TongTien", tongtien);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
