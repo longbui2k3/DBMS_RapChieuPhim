@@ -94,30 +94,8 @@ namespace QuanLyRapChieuPhim.UC
             }    
         }
 
-        private void dgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgv_KhachHang.Rows[e.RowIndex];
-                maKHtt = row.Cells[0].Value.ToString();
-                tenKH = row.Cells[1].Value.ToString();
-                birthday = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
-            }
-        }
 
-        private void dgv_LichChieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgv_LichChieu.Rows[e.RowIndex];
-                malc = row.Cells[0].Value.ToString();
-                check = int.Parse(row.Cells[8].Value.ToString());
-                maPC = row.Cells[9].Value.ToString();
-                date = Convert.ToDateTime(row.Cells["NgayChieu"].Value);
-                giobatdau = TimeSpan.Parse(row.Cells["GioBatDau"].Value.ToString());
 
-            }
-        }
 
         private void btn_chonphim_Click(object sender, EventArgs e)
         {
@@ -151,6 +129,31 @@ namespace QuanLyRapChieuPhim.UC
         private void lblSelectMovie_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgv_KhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv_KhachHang.Rows[e.RowIndex];
+                maKHtt = row.Cells[0].Value.ToString();
+                tenKH = row.Cells[1].Value.ToString();
+                birthday = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
+            }
+        }
+
+        private void dgv_LichChieu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv_LichChieu.Rows[e.RowIndex];
+                malc = row.Cells[0].Value.ToString();
+                check = int.Parse(row.Cells[8].Value.ToString());
+                maPC = row.Cells[9].Value.ToString();
+                date = Convert.ToDateTime(row.Cells["NgayChieu"].Value);
+                giobatdau = TimeSpan.Parse(row.Cells["GioBatDau"].Value.ToString());
+
+            }
         }
     }
 }
