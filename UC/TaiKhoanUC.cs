@@ -63,7 +63,7 @@ namespace QuanLyRapChieuPhim.UC
         void createTaiKhoan()
         {
             TaiKhoan taiKhoan = new TaiKhoan(txtUsername.Text, "", cb_LoaiTaiKhoan.Text);
-            taiKhoanDAO.createTaiKhoan(taiKhoan);
+            taiKhoanDAO.createTaiKhoan(taiKhoan, txtMaNV.Text);
             emptyTextBox();
             LoadTaiKhoanList();
         }

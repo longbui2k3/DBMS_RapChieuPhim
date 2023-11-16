@@ -41,5 +41,16 @@ namespace QuanLyRapChieuPhim.UC
             }
             nvd.conn.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormResetPwd formReset = new FormResetPwd();
+            formReset.Show();
+        }
+
+        private void txtTenNguoiDung_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace QuanLyRapChieuPhim.Forms
             DataTable obj = tkDao.DangNhap(taiKhoan);
             String userId = null;
             String loaiTk = null;
-            if (obj.Rows.Count > 0)
+            if (obj?.Rows.Count > 0)
             {
                userId = (String)obj.Rows[0][0];
                loaiTk = (String)obj.Rows[0][1];
@@ -47,12 +47,6 @@ namespace QuanLyRapChieuPhim.Forms
                 adForm.Show();
                 this.Hide();
             }
-            else
-            {
-                MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng!", "Đăng Nhập");
-
-            }
-
         }
     }
 }

@@ -81,7 +81,7 @@ namespace QuanLyRapChieuPhim.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thêm thất bại \n" + ex.Message);
+                MessageBox.Show("Thêm thất bại \n" + ex.Message.Split('\n')[0]);
             }
             finally
             {
@@ -104,7 +104,7 @@ namespace QuanLyRapChieuPhim.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Xóa thất bại \n" + ex.Message);
+                MessageBox.Show("Xóa thất bại \n" + ex.Message.Split('\n')[0]);
             }
             finally
             {
@@ -133,7 +133,7 @@ namespace QuanLyRapChieuPhim.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sửa thất bại \n" + ex.Message);
+                MessageBox.Show("Sửa thất bại \n" + ex.Message.Split('\n')[0]);
             }
             finally
             {

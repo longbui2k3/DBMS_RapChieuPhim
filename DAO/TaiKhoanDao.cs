@@ -33,40 +33,70 @@ namespace QuanLyRapChieuPhim.DAO
 
         public DataTable DangNhap(TaiKhoan taiKhoan)
         {
-            conn.Open();
-            DataTable dt = new DataTable();
-            SqlCommand sql_cmd = new SqlCommand("Select * from func_DangNhap(@TenNguoiDung, @MatKhau)", conn);
-            sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = taiKhoan.TenNguoiDung;
-            sql_cmd.Parameters.Add("@MatKhau", SqlDbType.VarChar).Value = taiKhoan.MatKhau;
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlCommand sql_cmd = new SqlCommand("proc_DangNhap", conn);
+                sql_cmd.CommandType = CommandType.StoredProcedure;
+                sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = taiKhoan.TenNguoiDung;
+                sql_cmd.Parameters.Add("@MatKhau", SqlDbType.VarChar).Value = taiKhoan.MatKhau;
 
-            SqlDataAdapter adapter = new SqlDataAdapter(sql_cmd);
-            adapter.Fill(dt);
-            conn.Close();
-            return dt;
+                SqlDataAdapter adapter = new SqlDataAdapter(sql_cmd);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message.Split('\n')[0]);
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
         }
-
-        public void createTaiKhoan(TaiKhoan taiKhoan)
+        public void resetMatKhau(String tenNguoiDung, String matKhauCu, String matKhauMoi)
         {
-            conn.Open();
-            SqlCommand sql_cmd = new SqlCommand("proc_InsertTaiKhoan", conn);
-            sql_cmd.CommandType = CommandType.StoredProcedure;
-            sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = taiKhoan.TenNguoiDung;
-            sql_cmd.Parameters.Add("@MatKhau", SqlDbType.VarChar).Value = taiKhoan.MatKhau;
-            sql_cmd.Parameters.Add("@LoaiTaiKhoan", SqlDbType.VarChar).Value = taiKhoan.LoaiTaiKhoan;
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlCommand sql_cmd = new SqlCommand("proc_UpdateTaiKhoan", conn);
+                sql_cmd.CommandType = CommandType.StoredProcedure;
+                sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = tenNguoiDung;
+                sql_cmd.Parameters.Add("@MatKhauMoi", SqlDbType.VarChar).Value = matKhauMoi;
+                sql_cmd.Parameters.Add("@MatKhauCu", SqlDbType.VarChar).Value = matKhauCu;
+                sql_cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Split('\n')[0]);
 
-            sql_cmd.ExecuteNonQuery();
-            conn.Close();
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
-        public void updateTaiKhoan(TaiKhoan taiKhoan)
+        public void createTaiKhoan(TaiKhoan taiKhoan, string maNhanVien)
         {
-            conn.Open();
-            SqlCommand sql_cmd = new SqlCommand("proc_UpdateTaiKhoan", conn);
-            sql_cmd.CommandType = CommandType.StoredProcedure;
-            sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = taiKhoan.TenNguoiDung;
-            sql_cmd.Parameters.Add("@MatKhau", SqlDbType.VarChar).Value = taiKhoan.MatKhau;
-
-            sql_cmd.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                conn.Open();
+                SqlCommand sql_cmd = new SqlCommand("proc_InsertTaiKhoan", conn);
+                sql_cmd.CommandType = CommandType.StoredProcedure;
+                sql_cmd.Parameters.Add("@TenNguoiDung", SqlDbType.NVarChar).Value = taiKhoan.TenNguoiDung;
+                sql_cmd.Parameters.Add("@MatKhau", SqlDbType.VarChar).Value = taiKhoan.MatKhau;
+                sql_cmd.Parameters.Add("@LoaiTaiKhoan", SqlDbType.VarChar).Value = taiKhoan.LoaiTaiKhoan;
+                sql_cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = maNhanVien;
+                sql_cmd.ExecuteNonQuery();
+                conn.Close();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.Split('\n')[0]);
+            }
         }
         public void deleteTaiKhoan(TaiKhoan taiKhoan)
         {

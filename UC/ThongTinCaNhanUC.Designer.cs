@@ -54,6 +54,7 @@
             this.lblCusAddress = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblCusName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dtBirth
@@ -140,6 +141,7 @@
             this.txtTenNguoiDung.ReadOnly = true;
             this.txtTenNguoiDung.Size = new System.Drawing.Size(264, 30);
             this.txtTenNguoiDung.TabIndex = 39;
+            this.txtTenNguoiDung.TextChanged += new System.EventHandler(this.txtTenNguoiDung_TextChanged);
             // 
             // txtGioiTinh
             // 
@@ -305,10 +307,21 @@
             this.lblCusName.TabIndex = 25;
             this.lblCusName.Text = "Họ tên:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(828, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 43);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Reset Mật Khẩu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ThongTinCaNhanUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dtBirth);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMaChiNhanhQL);
@@ -371,5 +384,6 @@
         private System.Windows.Forms.Label lblCusAddress;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblCusName;
+        private System.Windows.Forms.Button button1;
     }
 }
