@@ -30,6 +30,7 @@ namespace QuanLyRapChieuPhim.Forms
         List<int> soluonglist = new List<int>();
         List<int> giavelist = new List<int>();
         List<int> giadoanlist = new List<int>();
+        List<int> tongtien = new List<int>();
 
         String currMaGiaVe;
         String currDoAn;
@@ -50,7 +51,7 @@ namespace QuanLyRapChieuPhim.Forms
             {
                 cboSelectGiaVe.Items.Add(dt.Rows[i]["LoaiVe"]);
                 maGiaVeList.Add((String)dt.Rows[i]["MaGiaVe"]);
-                giavelist.Add(int.Parse(dt.Rows[i]["GiaVe"].ToString()) + int.Parse(dt.Rows[i]["TangGia"].ToString()));
+                giavelist.Add(int.Parse(dt.Rows[i]["TongTien"].ToString()));
             }
             DataTable dt1 = doan.layDanhSachDoAn();
             for (int i = 0; i < dt1.Rows.Count; i++)
@@ -78,16 +79,6 @@ namespace QuanLyRapChieuPhim.Forms
                 return;
             currMaGiaVe = maGiaVeList[ind];
             currGiaVe = giavelist[ind];
-        }
-
-        private void dgv_ghe_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgv_ghe.Rows[e.RowIndex];
-                currmaghe = int.Parse(row.Cells["MaGhe"].Value.ToString());
-                MessageBox.Show("Chọn vé thành công");
-            }
         }
         void LoadGhe()
         {
@@ -119,6 +110,7 @@ namespace QuanLyRapChieuPhim.Forms
             {
                 maGheList.Add(currmaghe);
                 magvList.Add(currMaGiaVe);
+                tongtien.Add(currGiaVe);
                 TongTien = TongTien + currGiaVe;
                 lbl_TongTien.Text = TongTien.ToString();
                 lbl_listve.Text = lbl_listve.Text + currmaghe.ToString() + " ";
@@ -136,7 +128,6 @@ namespace QuanLyRapChieuPhim.Forms
         private void cboDoAn_SelectedIndexChanged(object sender, EventArgs e)
         {
                 int ind = cboDoAn.Items.IndexOf(cboDoAn.SelectedItem);
-                Console.WriteLine(maDoAnList.Count);
                 if (ind < 0)
                     return;
                 if (maDoAnList.Count == 0)
@@ -172,14 +163,16 @@ namespace QuanLyRapChieuPhim.Forms
             }
             else
             {
-                foreach (var i in maGheList.Zip(maGiaVeList, Tuple.Create))
+                for (int i = 0; i < maGheList.Count; i++)
                 {
-                    banve.createVe(manv, makh, i.Item1, i.Item2, malc);
+                    banve.createVe(manv, makh, maGheList[i], maGiaVeList[i], malc, tongtien[i]);
                 }
-                foreach (var i in maDoAnList.Zip(soluonglist, Tuple.Create))
+                for (int i = 0; i < maDoAnList.Count; i++)
                 {
-                    banve.CreateHoaDonDoAn(i.Item1, makh, i.Item2);
+                    banve.CreateHoaDonDoAn(maDoAnList[i], makh, soluonglist[i]);
                 }
+
+                MessageBox.Show("Thanh toán thành công");
             }
             this.Close();
         }
@@ -192,6 +185,21 @@ namespace QuanLyRapChieuPhim.Forms
         private void Btn_Huy_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgv_ghe_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv_ghe.Rows[e.RowIndex];
+                currmaghe = int.Parse(row.Cells["MaGhe"].Value.ToString());
+                MessageBox.Show("Chọn vé thành công");
+            }
+        }
+
+        private void dgv_ghe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

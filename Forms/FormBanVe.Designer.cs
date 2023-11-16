@@ -60,6 +60,7 @@
             this.dgv_ghe.RowTemplate.Height = 24;
             this.dgv_ghe.Size = new System.Drawing.Size(460, 502);
             this.dgv_ghe.TabIndex = 0;
+            this.dgv_ghe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ghe_CellClick_1);
             this.dgv_ghe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ghe_CellContentClick);
             // 
             // lblCusID
