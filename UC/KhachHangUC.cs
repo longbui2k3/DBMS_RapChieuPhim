@@ -61,7 +61,7 @@ namespace QuanLyRapChieuPhim.UC
                 txt_HoVaTen.Text = row.Cells[1].Value.ToString();
                 date_NgaySinh.Value = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
                 txt_Email.Text = row.Cells[3].Value.ToString();
-                txt_SoDienThoai.Text = row.Cells[4].Value.ToString();
+                txt_SoDienThoai.Text = row.Cells[4].Value.ToString().Trim();
                 cb_GioiTinh.Text = row.Cells[5].Value.ToString();
                 txt_DiaChi.Text = row.Cells[6].Value.ToString();
             }

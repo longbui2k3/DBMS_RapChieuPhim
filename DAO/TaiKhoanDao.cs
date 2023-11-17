@@ -92,11 +92,12 @@ namespace QuanLyRapChieuPhim.DAO
                 sql_cmd.Parameters.Add("@LoaiTaiKhoan", SqlDbType.VarChar).Value = taiKhoan.LoaiTaiKhoan;
                 sql_cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = maNhanVien;
                 sql_cmd.ExecuteNonQuery();
-                conn.Close();
+                
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message.Split('\n')[0]);
             }
+            finally { conn.Close(); }
         }
         public void deleteTaiKhoan(TaiKhoan taiKhoan)
         {

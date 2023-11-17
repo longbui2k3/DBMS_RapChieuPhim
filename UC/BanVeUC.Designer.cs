@@ -59,6 +59,7 @@
             this.dgv_LichChieu.Size = new System.Drawing.Size(1068, 309);
             this.dgv_LichChieu.TabIndex = 0;
             this.dgv_LichChieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LichChieu_CellClick);
+            this.dgv_LichChieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LichChieu_CellContentClick);
             // 
             // lblCusID
             // 

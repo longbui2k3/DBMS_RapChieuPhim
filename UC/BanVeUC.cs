@@ -144,7 +144,21 @@ namespace QuanLyRapChieuPhim.UC
 
         private void dgv_LichChieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv_LichChieu.Rows[e.RowIndex];
+                malc = row.Cells[0].Value.ToString();
+                check = int.Parse(row.Cells[8].Value.ToString());
+                maPC = row.Cells[9].Value.ToString();
+                date = Convert.ToDateTime(row.Cells["NgayChieu"].Value);
+                giobatdau = TimeSpan.Parse(row.Cells["GioBatDau"].Value.ToString());
+
+            }
+        }
+
+        private void dgv_LichChieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgv_LichChieu.Rows[e.RowIndex];
                 malc = row.Cells[0].Value.ToString();
