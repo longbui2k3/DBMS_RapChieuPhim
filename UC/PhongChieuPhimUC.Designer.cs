@@ -35,9 +35,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgvCinema = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.txtTinhTrang = new System.Windows.Forms.TextBox();
-            this.lblCinemaStatus = new System.Windows.Forms.Label();
+            this.btnSearchPhongCP = new System.Windows.Forms.Button();
+            this.txtSearchPhongCP = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtSoChoNgoi = new System.Windows.Forms.TextBox();
             this.lblCinemaSeats = new System.Windows.Forms.Label();
@@ -47,12 +46,9 @@
             this.panel32 = new System.Windows.Forms.Panel();
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.lblCinemaID = new System.Windows.Forms.Label();
-            this.btnSearchPhongCP = new System.Windows.Forms.Button();
-            this.txtSearchPhongCP = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCinema)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel31.SuspendLayout();
             this.panel32.SuspendLayout();
@@ -127,6 +123,7 @@
             this.dtgvCinema.RowHeadersWidth = 51;
             this.dtgvCinema.Size = new System.Drawing.Size(1248, 717);
             this.dtgvCinema.TabIndex = 1;
+            this.dtgvCinema.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCinema_CellContentClick);
             // 
             // panel2
             // 
@@ -134,7 +131,6 @@
             this.panel2.Controls.Add(this.txtSearchPhongCP);
             this.panel2.Controls.Add(this.btnShowCinema);
             this.panel2.Controls.Add(this.btnUpdateCinema);
-            this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.btnDeleteCinema);
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.btnInsertCinema);
@@ -147,41 +143,30 @@
             this.panel2.Size = new System.Drawing.Size(476, 717);
             this.panel2.TabIndex = 0;
             // 
-            // panel9
+            // btnSearchPhongCP
             // 
-            this.panel9.Controls.Add(this.txtTinhTrang);
-            this.panel9.Controls.Add(this.lblCinemaStatus);
-            this.panel9.Location = new System.Drawing.Point(16, 293);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(442, 54);
-            this.panel9.TabIndex = 7;
+            this.btnSearchPhongCP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchPhongCP.Location = new System.Drawing.Point(348, 107);
+            this.btnSearchPhongCP.Name = "btnSearchPhongCP";
+            this.btnSearchPhongCP.Size = new System.Drawing.Size(92, 33);
+            this.btnSearchPhongCP.TabIndex = 29;
+            this.btnSearchPhongCP.Text = "Search";
+            this.btnSearchPhongCP.UseVisualStyleBackColor = true;
+            this.btnSearchPhongCP.Click += new System.EventHandler(this.btnSearchPhongCP_Click);
             // 
-            // txtTinhTrang
+            // txtSearchPhongCP
             // 
-            this.txtTinhTrang.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTinhTrang.Location = new System.Drawing.Point(137, 11);
-            this.txtTinhTrang.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(282, 33);
-            this.txtTinhTrang.TabIndex = 3;
-            // 
-            // lblCinemaStatus
-            // 
-            this.lblCinemaStatus.AutoSize = true;
-            this.lblCinemaStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblCinemaStatus.Location = new System.Drawing.Point(4, 11);
-            this.lblCinemaStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCinemaStatus.Name = "lblCinemaStatus";
-            this.lblCinemaStatus.Size = new System.Drawing.Size(116, 24);
-            this.lblCinemaStatus.TabIndex = 0;
-            this.lblCinemaStatus.Text = "Tình trạng:";
+            this.txtSearchPhongCP.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchPhongCP.Location = new System.Drawing.Point(16, 107);
+            this.txtSearchPhongCP.Name = "txtSearchPhongCP";
+            this.txtSearchPhongCP.Size = new System.Drawing.Size(316, 33);
+            this.txtSearchPhongCP.TabIndex = 28;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.txtSoChoNgoi);
             this.panel8.Controls.Add(this.lblCinemaSeats);
-            this.panel8.Location = new System.Drawing.Point(16, 355);
+            this.panel8.Location = new System.Drawing.Point(16, 293);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(442, 54);
@@ -267,25 +252,6 @@
             this.lblCinemaID.TabIndex = 0;
             this.lblCinemaID.Text = "Mã phòng:";
             // 
-            // btnSearchPhongCP
-            // 
-            this.btnSearchPhongCP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchPhongCP.Location = new System.Drawing.Point(348, 107);
-            this.btnSearchPhongCP.Name = "btnSearchPhongCP";
-            this.btnSearchPhongCP.Size = new System.Drawing.Size(92, 33);
-            this.btnSearchPhongCP.TabIndex = 29;
-            this.btnSearchPhongCP.Text = "Search";
-            this.btnSearchPhongCP.UseVisualStyleBackColor = true;
-            this.btnSearchPhongCP.Click += new System.EventHandler(this.btnSearchPhongCP_Click);
-            // 
-            // txtSearchPhongCP
-            // 
-            this.txtSearchPhongCP.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchPhongCP.Location = new System.Drawing.Point(16, 107);
-            this.txtSearchPhongCP.Name = "txtSearchPhongCP";
-            this.txtSearchPhongCP.Size = new System.Drawing.Size(316, 33);
-            this.txtSearchPhongCP.TabIndex = 28;
-            // 
             // PhongChieuPhimUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,8 +264,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCinema)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel31.ResumeLayout(false);
@@ -318,8 +282,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtgvCinema;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label lblCinemaStatus;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label lblCinemaSeats;
         private System.Windows.Forms.Panel panel31;
@@ -327,7 +289,6 @@
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.Label lblCinemaID;
-        private System.Windows.Forms.TextBox txtTinhTrang;
         private System.Windows.Forms.TextBox txtSoChoNgoi;
         private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.Button btnSearchPhongCP;

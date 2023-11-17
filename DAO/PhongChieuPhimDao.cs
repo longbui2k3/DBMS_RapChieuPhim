@@ -38,6 +38,7 @@ namespace QuanLyRapChieuPhim.DAO
             SqlCommand sql_cmd = new SqlCommand("proc_InsertPhongChieuPhim", conn);
             sql_cmd.CommandType = CommandType.StoredProcedure;
             sql_cmd.Parameters.Add("@TenPhong", SqlDbType.NVarChar).Value = phongChieuPhim.TenPhong;
+            sql_cmd.Parameters.Add("@SoLuongGhe", SqlDbType.NVarChar).Value = phongChieuPhim.SoLuongGhe;
             sql_cmd.ExecuteNonQuery();
             conn.Close();
         }

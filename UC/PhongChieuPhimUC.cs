@@ -19,7 +19,7 @@ namespace QuanLyRapChieuPhim.UC
         {
             InitializeComponent();
         }
-        void LoadNhanVienList()
+        void LoadPhongChieuPhimList()
         {
             dtgvCinema.DataSource = phongCPDao.LayDanhSachPhongChieuPhim();
         }
@@ -27,18 +27,18 @@ namespace QuanLyRapChieuPhim.UC
         {
             txtMaPhong.Text = "";
             txtTenPhong.Text = "";
-            txtTinhTrang.Text = "";
             txtSoChoNgoi.Text = "";     
         }
         private void PhongChieuPhimUC_Load(object sender, EventArgs e)
         {
-            LoadNhanVienList();
+            LoadPhongChieuPhimList();
         }
         private void btnInsertCinema_Click(object sender, EventArgs e)
         {
             PhongChieuPhim phongChieuPhim = new PhongChieuPhim(txtMaPhong.Text, txtTenPhong.Text, Int32.Parse(txtSoChoNgoi.Text == "" ? "0" : txtSoChoNgoi.Text));
             phongCPDao.createPhongChieuPhim(phongChieuPhim);
             emptyTextBox();
+            LoadPhongChieuPhimList();
         }
 
         private void btnDeleteCinema_Click(object sender, EventArgs e)
@@ -46,6 +46,7 @@ namespace QuanLyRapChieuPhim.UC
             PhongChieuPhim phongChieuPhim = new PhongChieuPhim(txtMaPhong.Text, txtTenPhong.Text, Int32.Parse(txtSoChoNgoi.Text == "" ? "0" : txtSoChoNgoi.Text));
             phongCPDao.deletePhongChieuPhim(phongChieuPhim);
             emptyTextBox();
+            LoadPhongChieuPhimList();
         }
 
         private void btnUpdateCinema_Click(object sender, EventArgs e)
@@ -53,16 +54,30 @@ namespace QuanLyRapChieuPhim.UC
             PhongChieuPhim phongChieuPhim = new PhongChieuPhim(txtMaPhong.Text, txtTenPhong.Text, Int32.Parse(txtSoChoNgoi.Text == "" ? "0" : txtSoChoNgoi.Text));
             phongCPDao.updatePhongChieuPhim(phongChieuPhim);
             emptyTextBox();
+            LoadPhongChieuPhimList();
         }
 
         private void btnShowCinema_Click(object sender, EventArgs e)
         {
-            LoadNhanVienList();
+            LoadPhongChieuPhimList();
         }
 
         private void btnSearchPhongCP_Click(object sender, EventArgs e)
         {
-            phongCPDao.searchPhongChieuPhim(txtSearchPhongCP.Text);
+            dtgvCinema.DataSource = phongCPDao.searchPhongChieuPhim(txtSearchPhongCP.Text);
+        }
+
+        private void dtgvCinema_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgvCinema.Rows[e.RowIndex];
+
+                txtMaPhong.Text = row.Cells[0].Value.ToString();
+                txtTenPhong.Text=row.Cells[1].Value.ToString();
+                txtSoChoNgoi.Text=row.Cells[2].Value.ToString();
+
+            }
         }
     }
 }

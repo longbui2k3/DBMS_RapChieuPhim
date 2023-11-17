@@ -144,7 +144,7 @@ namespace QuanLyRapChieuPhim.UC
 
         private void dgv_LichChieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex > 0)
             {
                 DataGridViewRow row = dgv_LichChieu.Rows[e.RowIndex];
                 malc = row.Cells[0].Value.ToString();

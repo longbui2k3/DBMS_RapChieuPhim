@@ -27,6 +27,7 @@ namespace QuanLyRapChieuPhim.Forms
         List<String> magvList = new List<String>();
         List<int> maGheList = new List<int>();
         List<String> maDoAnList = new List<String>();
+        List<String> maDoAnListMua = new List<string>();
         List<int> soluonglist = new List<int>();
         List<int> giavelist = new List<int>();
         List<int> giadoanlist = new List<int>();
@@ -51,7 +52,7 @@ namespace QuanLyRapChieuPhim.Forms
             {
                 cboSelectGiaVe.Items.Add(dt.Rows[i]["LoaiVe"]);
                 maGiaVeList.Add((String)dt.Rows[i]["MaGiaVe"]);
-                giavelist.Add(int.Parse(dt.Rows[i]["TongTien"].ToString()));
+                giavelist.Add(int.Parse(dt.Rows[i]["GiaVe"].ToString()));
             }
             DataTable dt1 = doan.layDanhSachDoAn();
             for (int i = 0; i < dt1.Rows.Count; i++)
@@ -142,7 +143,7 @@ namespace QuanLyRapChieuPhim.Forms
             int count = int.Parse(txt_SoLuong.Text);
             if (txt_SoLuong != null)
             {
-                maDoAnList.Add(currDoAn);
+                maDoAnListMua.Add(currDoAn);
                 soluonglist.Add(count);
                 TongTien = TongTien + count * currgiadoan;
                 lbl_TongTien.Text = TongTien.ToString();
@@ -167,9 +168,10 @@ namespace QuanLyRapChieuPhim.Forms
                 {
                     banve.createVe(manv, makh, maGheList[i], maGiaVeList[i], malc, tongtien[i]);
                 }
-                for (int i = 0; i < maDoAnList.Count; i++)
+
+                for (int i = 0; i < maDoAnListMua.Count; i++)
                 {
-                    banve.CreateHoaDonDoAn(maDoAnList[i], makh, soluonglist[i]);
+                    banve.CreateHoaDonDoAn(maDoAnListMua[i], makh, soluonglist[i]);
                 }
 
                 MessageBox.Show("Thanh toán thành công");

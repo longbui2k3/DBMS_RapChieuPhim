@@ -146,7 +146,7 @@
       <DependentUpon>FormResetPwd.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiNhanh.cs" />
-    <Compile Include="Models\ChiTietDoAn.cs" />
+    <Compile Include="Models\HoaDonDoAn.cs" />
     <Compile Include="Models\DoAn.cs" />
     <Compile Include="Models\Ghe.cs" />
     <Compile Include="Models\GiaVe.cs" />
