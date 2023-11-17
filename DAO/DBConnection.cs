@@ -9,10 +9,17 @@ namespace QuanLyRapChieuPhim.DAO
 {
     internal class DBConnection
     {
-        public SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\QLRapPhim.mdf\";Integrated Security=True");
+        public static string TenNguoiDung = "";
+        public static string MatKhau = "";
+        public SqlConnection conn;
         public DBConnection()
         {
-            conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\QLRapPhim.mdf\";Integrated Security=True");
+            /*if (TenNguoiDung != "")
+            {
+                conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Database=QLRapPhim;User Id=" + TenNguoiDung + ";Password=" + MatKhau);
+            }
+            else*/
+                conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Database=QLRapPhim;Integrated Security=True");
         }
     }
 }

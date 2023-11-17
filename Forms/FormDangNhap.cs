@@ -37,15 +37,21 @@ namespace QuanLyRapChieuPhim.Forms
             }
             if (loaiTk == "User" && userId != null)
             {
+                DBConnection.TenNguoiDung = txtUsername.Text;
+                DBConnection.MatKhau = txtPassword.Text;
                 FormNhanVien nvForm = new FormNhanVien();
                 nvForm.Show();
                 this.Hide();
+                
             }
             else if (loaiTk == "Admin" && userId != null)
             {
+                DBConnection.TenNguoiDung = txtUsername.Text;
+                DBConnection.MatKhau = txtPassword.Text;
                 FormAdmin adForm = new FormAdmin();
                 adForm.Show();
                 this.Hide();
+              
             }
         }
     }
