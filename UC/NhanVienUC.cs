@@ -54,7 +54,7 @@ namespace QuanLyRapChieuPhim.UC
         {
             NhanVien nhanVien = new NhanVien(txtMaNhanVien.Text, txtHoTen.Text, dtBirth.Value.Date,
                 txtEmail.Text, txtSdt.Text, txtGioiTinh.Text, txtDiaChi.Text, int.Parse(txtLuong.Text), txtCaLamViec.Text,
-                txtViTri.Text, txtTenNguoiDung.Text, txtMaChiNhanh.Text, txtMaChiNhanhQL.Text);
+                txtViTri.Text, txtTenNguoiDung.Text == "" ? "admin5" : txtTenNguoiDung.Text, txtMaChiNhanh.Text == "" ? "CN001" : txtMaChiNhanh.Text, txtMaChiNhanhQL.Text == "" ? "CN001" : txtMaChiNhanhQL.Text);
             /*nvDAO.xuLi(nhanVien, "Delete");*/
             nvDAO.deleteNhanVien(nhanVien);
             emptyTextBox();
@@ -64,8 +64,8 @@ namespace QuanLyRapChieuPhim.UC
         void ThemNhanVien()
         {
             NhanVien nhanVien = new NhanVien(txtMaNhanVien.Text, txtHoTen.Text, dtBirth.Value.Date,
-                txtEmail.Text, txtSdt.Text, txtGioiTinh.Text, txtDiaChi.Text, int.Parse(txtLuong.Text), txtCaLamViec.Text,
-                txtViTri.Text, txtTenNguoiDung.Text, txtMaChiNhanh.Text, txtMaChiNhanhQL.Text == "" ? txtMaChiNhanhQL.Text: null);
+                txtEmail.Text, txtSdt.Text, txtGioiTinh.Text, txtDiaChi.Text, int.Parse(txtLuong.Text == "" ? "0" : txtLuong.Text), txtCaLamViec.Text,
+                txtViTri.Text, txtTenNguoiDung.Text == "" ? "admin5" : txtTenNguoiDung.Text, txtMaChiNhanh.Text == "" ? "CN001" : txtMaChiNhanh.Text, txtMaChiNhanhQL.Text == "" ? "CN001" : txtMaChiNhanhQL.Text);
             /*nvDAO.xuLi(nhanVien, "Add");*/
             nvDAO.createNhanVien(nhanVien);
             emptyTextBox();
@@ -76,7 +76,7 @@ namespace QuanLyRapChieuPhim.UC
         {
             NhanVien nhanVien = new NhanVien(txtMaNhanVien.Text, txtHoTen.Text, dtBirth.Value.Date,
                 txtEmail.Text, txtSdt.Text, txtGioiTinh.Text, txtDiaChi.Text, int.Parse(txtLuong.Text), txtCaLamViec.Text,
-                txtViTri.Text, txtTenNguoiDung.Text, txtMaChiNhanh.Text.Trim(), txtMaChiNhanhQL.Text.Trim());
+                txtViTri.Text, txtTenNguoiDung.Text == "" ? "admin5" : txtTenNguoiDung.Text, txtMaChiNhanh.Text == "" ? "CN001" : txtMaChiNhanh.Text, txtMaChiNhanhQL.Text == "" ? "CN001" : txtMaChiNhanhQL.Text);
             /*nvDAO.xuLi(nhanVien, "Edit");*/
             nvDAO.updateNhanVien(nhanVien);
             emptyTextBox();

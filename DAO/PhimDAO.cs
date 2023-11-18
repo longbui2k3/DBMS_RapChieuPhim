@@ -117,17 +117,14 @@ namespace QuanLyRapChieuPhim.DAO
         }
         public int TongDoanhThu(String maPhim, DateTime tuNgay, DateTime denNgay)
         {
-            SqlCommand cmd = new SqlCommand("proc_TongDoanhThu", dao.conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+            SqlCommand cmd = new SqlCommand("SELECT dbo.func_TongDoanhThu(@MaPhim, @TuNgay, @DenNgay)", dao.conn);
             cmd.Parameters.Add("@MaPhim", SqlDbType.VarChar).Value = maPhim;
             cmd.Parameters.Add("@TuNgay", SqlDbType.Date).Value = tuNgay;
             cmd.Parameters.Add("@DenNgay", SqlDbType.Date).Value = denNgay;
-            DataTable dash = new DataTable();
             dao.conn.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            adapter.Fill(dash);
+            int tongDT = (int)cmd.ExecuteScalar();
             dao.conn.Close();
-            return (int)dash.Rows[0][0];
+            return tongDT;
         }
         public DataTable DanhSachLichPhim(string maphim,string machinhanh)
         {

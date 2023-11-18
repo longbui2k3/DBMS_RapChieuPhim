@@ -14,11 +14,11 @@ namespace QuanLyRapChieuPhim.DAO
         public SqlConnection conn;
         public DBConnection()
         {
-            /*if (TenNguoiDung != "")
+            if (TenNguoiDung != "")
             {
                 conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Database=QLRapPhim;User Id=" + TenNguoiDung + ";Password=" + MatKhau);
             }
-            else*/
+            else
                 conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Database=QLRapPhim;Integrated Security=True");
         }
     }
