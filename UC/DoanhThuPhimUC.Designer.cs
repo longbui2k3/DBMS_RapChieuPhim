@@ -1,6 +1,6 @@
 ﻿namespace QuanLyRapChieuPhim.UC
 {
-    partial class DoanhThuUC
+    partial class DoanhThuPhimUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -62,6 +62,7 @@
             this.lblTongDoanhThu.Size = new System.Drawing.Size(168, 24);
             this.lblTongDoanhThu.TabIndex = 49;
             this.lblTongDoanhThu.Text = "Tổng doanh thu:";
+            this.lblTongDoanhThu.Click += new System.EventHandler(this.lblTongDoanhThu_Click);
             // 
             // txtDoanhThu
             // 
@@ -72,6 +73,7 @@
             this.txtDoanhThu.Size = new System.Drawing.Size(235, 35);
             this.txtDoanhThu.TabIndex = 48;
             this.txtDoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDoanhThu.TextChanged += new System.EventHandler(this.txtDoanhThu_TextChanged);
             // 
             // label1
             // 
@@ -82,6 +84,7 @@
             this.label1.Size = new System.Drawing.Size(75, 19);
             this.label1.TabIndex = 46;
             this.label1.Text = "Từ ngày:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dtgvRevenue
             // 
@@ -95,6 +98,7 @@
             this.dtgvRevenue.RowHeadersWidth = 51;
             this.dtgvRevenue.Size = new System.Drawing.Size(1033, 421);
             this.dtgvRevenue.TabIndex = 45;
+            this.dtgvRevenue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvRevenue_CellContentClick);
             // 
             // btnReportRevenue
             // 
@@ -162,8 +166,9 @@
             this.label2.Size = new System.Drawing.Size(85, 19);
             this.label2.TabIndex = 51;
             this.label2.Text = "Đến ngày:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // DoanhThuUC
+            // DoanhThuPhimUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +183,7 @@
             this.Controls.Add(this.cboSelectMovie);
             this.Controls.Add(this.dtmToDate);
             this.Controls.Add(this.dtmFromDate);
-            this.Name = "DoanhThuUC";
+            this.Name = "DoanhThuPhimUC";
             this.Size = new System.Drawing.Size(1134, 662);
             this.Load += new System.EventHandler(this.DoanhThuUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRevenue)).EndInit();

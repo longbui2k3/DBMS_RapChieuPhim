@@ -171,7 +171,7 @@ namespace QuanLyRapChieuPhim.Forms
 
                 for (int i = 0; i < maDoAnListMua.Count; i++)
                 {
-                    banve.CreateHoaDonDoAn(maDoAnListMua[i], makh, soluonglist[i]);
+                    banve.CreateHoaDonDoAn(maDoAnListMua[i], makh, soluonglist[i], DateTime.Now);
                 }
 
                 MessageBox.Show("Thanh toán thành công");

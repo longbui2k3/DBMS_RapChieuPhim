@@ -124,7 +124,7 @@ namespace QuanLyRapChieuPhim.DAO
             }
             finally { conn.Close(); }
         }
-        public void CreateHoaDonDoAn(string maDoAn, string maKhachHang, int soLuong)
+        public void CreateHoaDonDoAn(string maDoAn, string maKhachHang, int soLuong, DateTime ngayXuat)
         {
             try
             {
@@ -134,7 +134,7 @@ namespace QuanLyRapChieuPhim.DAO
                 cmd.Parameters.AddWithValue("@MaDoAn", maDoAn);
                 cmd.Parameters.AddWithValue("@MaKhachHang", maKhachHang);
                 cmd.Parameters.AddWithValue("@SoLuong", soLuong);
-
+                cmd.Parameters.AddWithValue("@NgayXuat", ngayXuat);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

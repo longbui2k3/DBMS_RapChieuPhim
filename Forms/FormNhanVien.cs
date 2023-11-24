@@ -49,8 +49,9 @@ namespace QuanLyRapChieuPhim
             if (currButton != null)
                 ClickToChangeColor(currButton);
             currButton = btn_ThongTinCaNhan;
-            ClickToChangeColor(btn_ThongTinCaNhan); 
-
+            ClickToChangeColor(btn_ThongTinCaNhan);
+            DBConnection.TenNguoiDung = "";
+            DBConnection.MatKhau = "";
             FormDangNhap formDN = new FormDangNhap();
             formDN.Show();
             this.Hide();

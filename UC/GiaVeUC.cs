@@ -83,7 +83,7 @@ namespace QuanLyRapChieuPhim.UC
                 DataGridViewRow row = dgvGiaVe.Rows[e.RowIndex];
                 txt_MaGiaVe.Text = row.Cells[0].Value.ToString();
                 txt_LoaiVe.Text = row.Cells[1].Value.ToString();
-                txt_GiaVe.Text = row.Cells[2].Value.ToString();
+                txt_GiaVe.Text = row.Cells[3].Value.ToString();
             }
         }
         void LoadGiaVe()

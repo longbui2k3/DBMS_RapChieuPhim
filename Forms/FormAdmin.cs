@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyRapChieuPhim.DAO;
 using QuanLyRapChieuPhim.UC;
 
 namespace QuanLyRapChieuPhim.Forms
@@ -17,13 +18,15 @@ namespace QuanLyRapChieuPhim.Forms
         public FormAdmin()
         {
             InitializeComponent();
+            pnl_SubDoanhThu.Visible = false;
         }
         private Button currButton;
         private ThongTinRapUC ttruc = new ThongTinRapUC();
         private NhanVienUC nvuc = new NhanVienUC();
         private ChiNhanhUC cnuc = new ChiNhanhUC();
         private TaiKhoanUC tkuc = new TaiKhoanUC();
-        private DoanhThuUC dtuc = new DoanhThuUC();
+        private DoanhThuPhimUC dtuc = new DoanhThuPhimUC();
+        private DoanhThuDoAnUC dtdauc = new DoanhThuDoAnUC();
         private void ClickToChangeColor(Button btn)
         {
             if (btn.ForeColor == Color.White)
@@ -36,17 +39,12 @@ namespace QuanLyRapChieuPhim.Forms
         }
         private void btn_DoanhThu_Click(object sender, EventArgs e)
         {
+            pnl_SubDoanhThu.Visible = !pnl_SubDoanhThu.Visible;
             if (currButton != null)
                 ClickToChangeColor(currButton);
             currButton = btn_DoanhThu;
             ClickToChangeColor(btn_DoanhThu);
-
-            if (!splitContainer1.Panel2.Controls.Contains(dtuc))
-            {
-                splitContainer1.Panel2.Controls.Clear();
-                dtuc.Dock = DockStyle.Fill;
-                splitContainer1.Panel2.Controls.Add(dtuc);
-            }
+            
         }
 
         private void btn_ThongTinRap_Click(object sender, EventArgs e)
@@ -77,6 +75,7 @@ namespace QuanLyRapChieuPhim.Forms
                 nvuc.Dock = DockStyle.Fill;
                 splitContainer1.Panel2.Controls.Add(nvuc);
             }
+           
         }
 
         private void btn_TaiKhoan_Click(object sender, EventArgs e)
@@ -100,7 +99,8 @@ namespace QuanLyRapChieuPhim.Forms
                 ClickToChangeColor(currButton);
             currButton = btn_DangXuat;
             ClickToChangeColor(btn_DangXuat);
-
+            DBConnection.TenNguoiDung = "";
+            DBConnection.MatKhau = "";
             FormDangNhap formDN = new FormDangNhap();
             formDN.Show();
             this.Hide();
@@ -119,6 +119,43 @@ namespace QuanLyRapChieuPhim.Forms
                 splitContainer1.Panel2.Controls.Clear();
                 cnuc.Dock = DockStyle.Fill;
                 splitContainer1.Panel2.Controls.Add(cnuc);
+            }
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_Phim_Click(object sender, EventArgs e)
+        {
+            pnl_SubDoanhThu.Visible = false;
+            if (currButton != null)
+                ClickToChangeColor(currButton);
+            currButton = btn_DoanhThu;
+            ClickToChangeColor(btn_DoanhThu);
+
+            if (!splitContainer1.Panel2.Controls.Contains(dtuc))
+            {
+                splitContainer1.Panel2.Controls.Clear();
+                dtuc.Dock = DockStyle.Fill;
+                splitContainer1.Panel2.Controls.Add(dtuc);
+            }
+        }
+
+        private void btn_DoAn_Click(object sender, EventArgs e)
+        {
+            pnl_SubDoanhThu.Visible = false;
+            if (currButton != null)
+                ClickToChangeColor(currButton);
+            currButton = btn_DoanhThu;
+            ClickToChangeColor(btn_DoanhThu);
+
+            if (!splitContainer1.Panel2.Controls.Contains(dtdauc))
+            {
+                splitContainer1.Panel2.Controls.Clear();
+                dtdauc.Dock = DockStyle.Fill;
+                splitContainer1.Panel2.Controls.Add(dtdauc);
             }
         }
     }

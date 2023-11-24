@@ -172,11 +172,17 @@
     <Compile Include="UC\ChiNhanhUC.Designer.cs">
       <DependentUpon>ChiNhanhUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\DoanhThuUC.cs">
+    <Compile Include="UC\DoanhThuDoAnUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\DoanhThuUC.Designer.cs">
-      <DependentUpon>DoanhThuUC.cs</DependentUpon>
+    <Compile Include="UC\DoanhThuDoAnUC.Designer.cs">
+      <DependentUpon>DoanhThuDoAnUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\DoanhThuPhimUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\DoanhThuPhimUC.Designer.cs">
+      <DependentUpon>DoanhThuPhimUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\DoAnUC.cs">
       <SubType>UserControl</SubType>
@@ -201,12 +207,6 @@
     </Compile>
     <Compile Include="UC\LichChieuUC.Designer.cs">
       <DependentUpon>LichChieuUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\LichSuVeUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\LichSuVeUC.Designer.cs">
-      <DependentUpon>LichSuVeUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\NhanVienUC.cs">
       <SubType>UserControl</SubType>
@@ -283,8 +283,11 @@
     <EmbeddedResource Include="UC\ChiNhanhUC.resx">
       <DependentUpon>ChiNhanhUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\DoanhThuUC.resx">
-      <DependentUpon>DoanhThuUC.cs</DependentUpon>
+    <EmbeddedResource Include="UC\DoanhThuDoAnUC.resx">
+      <DependentUpon>DoanhThuDoAnUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\DoanhThuPhimUC.resx">
+      <DependentUpon>DoanhThuPhimUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\DoAnUC.resx">
       <DependentUpon>DoAnUC.cs</DependentUpon>
@@ -294,9 +297,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\LichChieuUC.resx">
       <DependentUpon>LichChieuUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\LichSuVeUC.resx">
-      <DependentUpon>LichSuVeUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\NhanVienUC.resx">
       <DependentUpon>NhanVienUC.cs</DependentUpon>

@@ -102,5 +102,29 @@ namespace QuanLyRapChieuPhim.DAO
             conn.Close();
             return dt;
         }
+
+        public DataTable DoanhThuDoAn(DateTime tuNgay, DateTime denNgay)
+        {
+            SqlCommand cmd = new SqlCommand("proc_DoanhThuDoAn", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@TuNgay", SqlDbType.Date).Value = tuNgay;
+            cmd.Parameters.Add("@DenNgay", SqlDbType.Date).Value = denNgay;
+            DataTable dash = new DataTable();
+            conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dash);
+            conn.Close();
+            return dash;
+        }
+        public int TongDoanhThuDoAn(DateTime tuNgay, DateTime denNgay)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT dbo.func_TongDoanhThuDoAn(@TuNgay, @DenNgay)", conn);
+            cmd.Parameters.Add("@TuNgay", SqlDbType.Date).Value = tuNgay;
+            cmd.Parameters.Add("@DenNgay", SqlDbType.Date).Value = denNgay;
+            conn.Open();
+            int tongDT = (int)cmd.ExecuteScalar();
+            conn.Close();
+            return tongDT;
+        }
     }
 }

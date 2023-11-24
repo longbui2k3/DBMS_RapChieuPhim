@@ -33,7 +33,6 @@
             this.btn_KhachHang = new System.Windows.Forms.Button();
             this.btn_DoAn = new System.Windows.Forms.Button();
             this.btn_GiaVe = new System.Windows.Forms.Button();
-            this.btn_Ve = new System.Windows.Forms.Button();
             this.btn_LichChieu = new System.Windows.Forms.Button();
             this.btn_Phim = new System.Windows.Forms.Button();
             this.panel_Main = new System.Windows.Forms.Panel();
@@ -47,7 +46,6 @@
             this.panel1.Controls.Add(this.btn_KhachHang);
             this.panel1.Controls.Add(this.btn_DoAn);
             this.panel1.Controls.Add(this.btn_GiaVe);
-            this.panel1.Controls.Add(this.btn_Ve);
             this.panel1.Controls.Add(this.btn_LichChieu);
             this.panel1.Controls.Add(this.btn_Phim);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -78,7 +76,7 @@
             this.btn_KhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_KhachHang.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_KhachHang.ForeColor = System.Drawing.Color.White;
-            this.btn_KhachHang.Location = new System.Drawing.Point(960, 0);
+            this.btn_KhachHang.Location = new System.Drawing.Point(800, 0);
             this.btn_KhachHang.Margin = new System.Windows.Forms.Padding(0);
             this.btn_KhachHang.Name = "btn_KhachHang";
             this.btn_KhachHang.Size = new System.Drawing.Size(160, 62);
@@ -93,7 +91,7 @@
             this.btn_DoAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DoAn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DoAn.ForeColor = System.Drawing.Color.White;
-            this.btn_DoAn.Location = new System.Drawing.Point(800, 0);
+            this.btn_DoAn.Location = new System.Drawing.Point(640, 0);
             this.btn_DoAn.Margin = new System.Windows.Forms.Padding(0);
             this.btn_DoAn.Name = "btn_DoAn";
             this.btn_DoAn.Size = new System.Drawing.Size(160, 62);
@@ -108,7 +106,7 @@
             this.btn_GiaVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_GiaVe.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GiaVe.ForeColor = System.Drawing.Color.White;
-            this.btn_GiaVe.Location = new System.Drawing.Point(640, 0);
+            this.btn_GiaVe.Location = new System.Drawing.Point(480, 0);
             this.btn_GiaVe.Margin = new System.Windows.Forms.Padding(0);
             this.btn_GiaVe.Name = "btn_GiaVe";
             this.btn_GiaVe.Size = new System.Drawing.Size(160, 62);
@@ -116,21 +114,6 @@
             this.btn_GiaVe.Text = "Giá Vé";
             this.btn_GiaVe.UseVisualStyleBackColor = true;
             this.btn_GiaVe.Click += new System.EventHandler(this.btn_GiaVe_Click);
-            // 
-            // btn_Ve
-            // 
-            this.btn_Ve.FlatAppearance.BorderSize = 0;
-            this.btn_Ve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Ve.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ve.ForeColor = System.Drawing.Color.White;
-            this.btn_Ve.Location = new System.Drawing.Point(480, 0);
-            this.btn_Ve.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Ve.Name = "btn_Ve";
-            this.btn_Ve.Size = new System.Drawing.Size(160, 62);
-            this.btn_Ve.TabIndex = 3;
-            this.btn_Ve.Text = "Lịch Sử Vé";
-            this.btn_Ve.UseVisualStyleBackColor = true;
-            this.btn_Ve.Click += new System.EventHandler(this.btn_Ve_Click);
             // 
             // btn_LichChieu
             // 
@@ -191,7 +174,6 @@
         private System.Windows.Forms.Button btn_KhachHang;
         private System.Windows.Forms.Button btn_DoAn;
         private System.Windows.Forms.Button btn_GiaVe;
-        private System.Windows.Forms.Button btn_Ve;
         private System.Windows.Forms.Button btn_LichChieu;
         private System.Windows.Forms.Panel panel_Main;
     }

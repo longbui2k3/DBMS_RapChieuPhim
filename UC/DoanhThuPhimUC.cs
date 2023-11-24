@@ -12,11 +12,11 @@ using QuanLyRapChieuPhim.Forms;
 
 namespace QuanLyRapChieuPhim.UC
 {
-    public partial class DoanhThuUC : UserControl
+    public partial class DoanhThuPhimUC : UserControl
     {
         private PhimDAO pdDao = new PhimDAO();
         String currMaPhim = "All";
-        public DoanhThuUC()
+        public DoanhThuPhimUC()
         {
             InitializeComponent();
             
@@ -77,6 +77,31 @@ namespace QuanLyRapChieuPhim.UC
         private void btnShowRevenue_Click(object sender, EventArgs e)
         {
             TaiDoanhThu();
+        }
+
+        private void lblTongDoanhThu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDoanhThu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgvRevenue_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
